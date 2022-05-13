@@ -52,6 +52,7 @@ header h1 {
 #book-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .book-cover {
@@ -62,7 +63,7 @@ header h1 {
   height: 22rem;
   top: 10px;
   border-radius: 2px;
-  filter: drop-shadow(3px 0px 9px rgba(122, 98, 61, 0.842))
+  filter: drop-shadow(7px 0px 15px rgba(84, 68, 45, 0.621))
     drop-shadow(1px 3px 7px rgba(80, 57, 25, 0.427));
   object-fit: cover;
   z-index: 10;
@@ -97,6 +98,10 @@ header h1 {
   .book2 {
     display: none;
   }
+}
+
+#refresh-icon:hover {
+  cursor: pointer;
 }
 
 /* Hero ends */
