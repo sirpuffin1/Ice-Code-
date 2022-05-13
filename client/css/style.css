@@ -7,27 +7,8 @@
 }
 
 /* Hero starts */
-#hero-bg {
-  position: relative;
-  height: 70vh;
+header {
   background-color: #f1ece0;
-}
-
-#shelf {
-  position: absolute;
-  width: 100vw;
-  height: 3rem;
-  bottom: 0;
-  background: linear-gradient(
-      180deg,
-      rgba(72, 91, 107, 0.198) 0%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    url("../img/shelf.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: drop-shadow(0px 15px 22px rgba(102, 76, 37, 0.81));
 }
 
 /* Light toggle starts */
@@ -58,6 +39,64 @@ header h1 {
   font-family: libre franklin;
   font-weight: 800;
   color: #003744;
+}
+
+/* Book container and shelf starts*/
+#shelf-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1ece0;
+}
+
+#book-container {
+  display: flex;
+  justify-content: center;
+}
+
+.book-cover {
+  position: relative;
+  background-color: #507882;
+  margin: 0 3rem 0 3rem;
+  width: 14.5rem;
+  height: 22rem;
+  top: 10px;
+  border-radius: 2px;
+  filter: drop-shadow(3px 0px 9px rgba(122, 98, 61, 0.842))
+    drop-shadow(1px 3px 7px rgba(80, 57, 25, 0.427));
+  object-fit: cover;
+  z-index: 10;
+}
+
+#shelf {
+  width: 100vw;
+  height: 3rem;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(72, 91, 107, 0.198) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("../img/shelf.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: drop-shadow(0px 15px 22px rgba(102, 76, 37, 0.81));
+  z-index: 1;
+}
+/* Book container end */
+
+/* Switches to 2 and 1 book on breakpoints */
+@media (max-width: 930px) {
+  .book3 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .book2 {
+    display: none;
+  }
 }
 
 /* Hero ends */
