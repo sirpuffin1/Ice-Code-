@@ -1,19 +1,14 @@
 import mongoose from "mongoose";
 
 const booksSchema = new mongoose.Schema({
-    id: {
-        type:Number,
-    },
+   
     title:{
         type:String,
-    },
-    isbn:{
-      type:Number,
     },
     author:{
         type:String,
     },
-    ImgUrl: {
+    note: {
         type:String
     }
 });
