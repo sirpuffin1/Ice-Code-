@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import { BooksModel } from "./books.model.js";
 
 
 const app = express();
@@ -17,12 +18,26 @@ mongoose.connect(url).then(() => {
 });
 
 
+app.get('/book', async function (req, res) {
+    const bookList = await BooksModel.find();
+    res.send(bookList);
+ });
 
 
-
-app.get("/", (res, req) => {
-    
-})
+app.post('/book', async function (req, res) {
+    const {title, author,note} = req.body;
+    const bookList = await BooksModel({
+        title, author,note
+    });
+    bookList.save()
+    .then((data) => {
+        res.json({data});
+    })
+    .catch(err => {
+        res.status(501);
+        res.json({errors: err});
+    })
+});
 
 
 app.listen(3001, ()=>{
