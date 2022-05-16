@@ -3,13 +3,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { BooksModel } from "./books.model.js";
 
-
+dotenv.config();
 const app = express();
 app.use(cors());
 
 app.use(express.json());
 
-const url= 'mongodb://localhost:27017/ice-code';
+const url= process.env.DATABASE_URL;
 
 mongoose.connect(url).then(() => {
     console.log("connected to DB successfully");
