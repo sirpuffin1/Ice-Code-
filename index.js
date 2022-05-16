@@ -24,6 +24,22 @@ app.get('/book', async function (req, res) {
  });
 
 
+ app.post('/book', async function (req, res) {
+    const {title, author,note} = req.body;
+    const bookList = await BooksModel({
+        title, author,note
+    });
+    bookList.save()
+    .then((data) => {
+        res.json({data});
+    })
+    .catch(err => {
+        res.status(501);
+        res.json({errors: err});
+    })
+});
+
+
 
 app.listen(3001, ()=>{
 console.log("server is running on port 3001");
