@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import { BooksModel } from "./books.model.js";
+
 
 dotenv.config();
 const app = express();
@@ -18,12 +20,11 @@ mongoose.connect(url).then(() => {
 });
 
 
+app.get('/book', async function (req, res) {
+    const bookList = await BooksModel.find();
+    res.send(bookList);
+ });
 
-
-
-app.get("/", (res, req) => {
-    
-})
 
 
 app.listen(3001, ()=>{
