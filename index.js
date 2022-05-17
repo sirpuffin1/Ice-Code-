@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-
 import { BooksModel } from "./books.model.js";
 
 import dotenv from "dotenv";
@@ -27,6 +26,7 @@ app.get('/book', async function (req, res) {
  });
 
 
+
  app.post('/book', async function (req, res) {
     const {title, author,note} = req.body;
     const bookList = await BooksModel({
@@ -43,7 +43,7 @@ app.get('/book', async function (req, res) {
 });
 
 
+app.listen(3001, ()=>{
+console.log("server is running on port 3001");
 
-app.listen(3002, ()=>{
-console.log("server is running on port 3002");
 })
