@@ -12,4 +12,4 @@ const bestsellersSchema = new mongoose.Schema({
         type:String
     }
 });
-export const SellersModel =mongoose.model('BestsellersModel',bestsellersSchema);
+export const SellersModel =mongoose.model('SellersModel',bestsellersSchema);
