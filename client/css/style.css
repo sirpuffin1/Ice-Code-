@@ -62,11 +62,64 @@ header h1 {
   width: 14.5rem;
   height: 22rem;
   top: 10px;
-  border-radius: 2px;
   filter: drop-shadow(7px 0px 15px rgba(84, 68, 45, 0.621))
     drop-shadow(1px 3px 7px rgba(80, 57, 25, 0.427));
-  object-fit: cover;
   z-index: 10;
+}
+
+.book-cover img {
+  object-fit: cover;
+  width: 14.5rem;
+  height: 22rem;
+}
+
+.book-overlay {
+  display: none;
+  position: absolute;
+  width: 14.5rem;
+  background: #003744;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px 0px 0px;
+  bottom: 0;
+  z-index: 20;
+}
+
+.book-cover:hover .book-overlay {
+  display: block;
+}
+
+.overlay-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.book-cover-title {
+  font-family: cardo;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2;
+  color: white;
+}
+
+.book-cover-author {
+  font-family: libre franklin;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: white;
+}
+
+#add-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  left: 10.5rem;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+#add-icon:hover {
+  cursor: pointer;
 }
 
 #shelf {
@@ -88,13 +141,13 @@ header h1 {
 /* Book container end */
 
 /* Switches to 2 and 1 book on breakpoints */
-@media (max-width: 930px) {
+@media (max-width: 1030px) {
   .book3 {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 710px) {
   .book2 {
     display: none;
   }
@@ -103,5 +156,4 @@ header h1 {
 #refresh-icon:hover {
   cursor: pointer;
 }
-
 /* Hero ends */
