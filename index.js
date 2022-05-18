@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { BooksModel } from "./books.model.js";
-import { BestsellersModel } from "./bestsellers.model.js";
+import { SellersModel } from "./bestsellers.model.js";
 
 import dotenv from "dotenv";
 
