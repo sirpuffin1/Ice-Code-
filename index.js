@@ -22,7 +22,7 @@ mongoose.connect(url).then(() => {
 //create a route called /bestsellers that gets information
 app.get('/bestsellers', async function(req, res) {
     //create a variable to hold a random set of 3 bestseller books
-    const bestSellersList = await BestsellersModel.aggregate([
+    const bestSellersList = await SellersModel.aggregate([
         {$sample: { size:3 }}
     ]);
     //if anything goes wrong let me know with a message otherwise tell me it was successful
