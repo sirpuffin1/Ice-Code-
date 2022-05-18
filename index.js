@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { BooksModel } from "./books.model.js";
+import { SellersModel } from "./bestsellers.model.js";
 
 import dotenv from "dotenv";
 
@@ -18,6 +19,20 @@ mongoose.connect(url).then(() => {
 }).catch((err) => {
     console.log("Failed to connect to DB", err);
 });
+//create a route called /bestsellers that gets information
+app.get('/bestsellers', async function(req, res) {
+    //create a variable to hold a random set of 3 bestseller books
+    const bestSellersList = await SellersModel.aggregate([
+        {$sample: { size:3 }}
+    ]);
+    //if anything goes wrong let me know with a message otherwise tell me it was successful
+    if(!bestSellersList) {
+        res.status(500).json({message: 'failed to find best sellers'})
+    } else {
+        res.status(200).send(bestSellersList)
+    }
+
+})
 
 
 app.get('/book', async function (req, res) {
