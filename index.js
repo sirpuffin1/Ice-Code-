@@ -20,6 +20,19 @@ mongoose.connect(url).then(() => {
     console.log("Failed to connect to DB", err);
 });
 
+app.get('/bestsellers', async function(req, res) {
+    const bestSellersList = await BestsellersModel.aggregate([
+        {$sample: { size:3 }}
+    ]);
+
+    if(!bestSellersList) {
+        res.status(500).json({message: 'failed to find best sellers'})
+    } else {
+        res.status(200).send(bestSellersList)
+    }
+
+})
+
 
 app.get('/book', async function (req, res) {
     const bookList = await BooksModel.find();
