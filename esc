@@ -1,0 +1,603 @@
+[33mcommit 9ea633107a522f3a5b1cf9586702724e369bb70d[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Mon May 23 11:50:31 2022 -0700
+
+    feat(img): add all images
+
+[33mcommit 8216f01bc7f537a0be767fef8a509351b3aef4d4[m
+Merge: c09d9a9 f89bcfe
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Mon May 23 11:38:22 2022 -0700
+
+    Merge pull request #45 from sirpuffin1/oopsie
+    
+    Oopsie
+
+[33mcommit f89bcfe2755f51c9e4ccbfeb2b114f103b335c98[m[33m ([m[1;31morigin/oopsie[m[33m)[m
+Merge: 7cb0365 c09d9a9
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Mon May 23 11:38:10 2022 -0700
+
+    Merge branch 'development' into oopsie
+
+[33mcommit 7cb0365816192b5d07c65e1cf41b6d02ef75b917[m[33m ([m[1;32moopsie[m[33m)[m
+Merge: f4d422e 4dea3d6
+Author: moon68work <czurowski@alphaworks.tech>
+Date:   Mon May 23 11:34:42 2022 -0700
+
+    fixing merge conflicts
+
+[33mcommit f4d422ea802720af07785d8d273fafdf2b6fbf34[m
+Merge: 4c54634 1b9ab75
+Author: moon68work <czurowski@alphaworks.tech>
+Date:   Mon May 23 11:31:37 2022 -0700
+
+    fix(errors): Trying to push styles
+
+[33mcommit c09d9a9a0df26739fb331d30d1a42d24108c2869[m
+Merge: 7fae38e 2fcfef4
+Author: Isabella Tannady <93556334+itannady@users.noreply.github.com>
+Date:   Mon May 23 10:55:25 2022 -0700
+
+    Merge pull request #44 from sirpuffin1/revert-43-KF-12-AddedTable
+    
+    Revert 43 kf 12 added table
+
+[33mcommit 2fcfef49e633c37048e41e42e72f66608d244713[m
+Author: Isabella Tannady <93556334+itannady@users.noreply.github.com>
+Date:   Mon May 23 10:54:42 2022 -0700
+
+    Revert "Kf 12 added table"
+
+[33mcommit 4dea3d6e652da50277243a3155bf4d0a70cf5802[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 1b9ab75 e7bb600
+Author: Isabella Tannady <93556334+itannady@users.noreply.github.com>
+Date:   Mon May 23 10:53:17 2022 -0700
+
+    Merge pull request #43 from sirpuffin1/KF-12-AddedTable
+    
+    Kf 12 added table
+
+[33mcommit e7bb6009962cd3c44a6e2889ea564fea63281df1[m
+Merge: c9980e9 1b9ab75
+Author: Isabella Tannady <93556334+itannady@users.noreply.github.com>
+Date:   Mon May 23 10:53:06 2022 -0700
+
+    Merge branch 'main' into KF-12-AddedTable
+
+[33mcommit c9980e9899efab3396b2bddcac1b7664e09ad22f[m[33m ([m[1;31morigin/KF-12-AddedTable[m[33m)[m
+Author: Kendall Fuller <kendallfuller97@yahoo.com>
+Date:   Mon May 23 10:48:17 2022 -0700
+
+    Added Table W/ Headers
+
+[33mcommit 7fae38eda6e1d04b742fee00335f3f7e51d7680a[m
+Merge: 55c5461 aba7ccf
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Wed May 18 12:18:33 2022 -0700
+
+    Merge pull request #41 from sirpuffin1/AC-40-Display-best-sellers
+    
+    Ac 40 display best sellers
+
+[33mcommit aba7ccfcb355f1f3a481ec02c6f052e4c745ca0c[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 12:04:59 2022 -0700
+
+    ref(main): remove console log
+
+[33mcommit 23e95f54449d394b79a0a4495af0e72ab6e0ddbe[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 12:04:02 2022 -0700
+
+    ref(main): clean up by adding call to function
+    running on page load/buttonclick
+
+[33mcommit d188d99468faf9135b6740c7ca58cb03ee09bee1[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 11:53:41 2022 -0700
+
+    ref(index): update script type to module
+
+[33mcommit f869ab63a68c80a796fea1f32ed50325189b6d7f[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 11:53:22 2022 -0700
+
+    feat(main): use apiservice to get books
+    then update html
+
+[33mcommit 67ec430a76880b42e403f481cb091c9f01cd4962[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 11:49:06 2022 -0700
+
+    ref(index): update tags
+
+[33mcommit 95e3ecff97d4cdd31539ecf2a079437d1f0a88af[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 11:46:25 2022 -0700
+
+    feat(api): add get function
+
+[33mcommit 55c546104e272ee12824de83149243392a583193[m
+Merge: b21c9df a3864c6
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Wed May 18 11:34:25 2022 -0700
+
+    Merge pull request #39 from sirpuffin1/AC-38-Create-BestSellers-Route
+    
+    Ac 38 create best sellers route
+
+[33mcommit b21c9dfbbfc1b2b73742f59c5f63f969cdc27821[m
+Merge: a71796e 3251de7
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Wed May 18 10:45:12 2022 -0700
+
+    for the gitignore, don't touch this
+
+[33mcommit a3864c6c8a533001371b2a151ba98615e35d43fb[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:43:15 2022 -0700
+
+    ref(shared): update model
+
+[33mcommit 1c2dc3ae15928eb3cf1f011aedd4c94e23fc00c4[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:40:50 2022 -0700
+
+    ref(server): update used model
+
+[33mcommit 34e232023ef885aa9df703f72a216451b7723527[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:40:11 2022 -0700
+
+    ref(server): update sellers import
+
+[33mcommit b7dd98d95e718ccd30f3e29a2cb1a20587505bfd[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:39:43 2022 -0700
+
+    ref(shared): rename sellersmodel
+
+[33mcommit b0ff24007639507394f9d0b42aa7f7b504f7b34f[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:34:41 2022 -0700
+
+    chore(server): add comments to BS route
+
+[33mcommit 98b0d991a9002ed2feff3ed36eac74746151f4d3[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:33:07 2022 -0700
+
+    feat(server): create bestsellers route
+
+[33mcommit a71796e88b19566be7086aa14ce3dc1376c7c58f[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Wed May 18 10:30:46 2022 -0700
+
+    gitignore
+
+[33mcommit 6ca3497ef214dcb39830bd2ec326adbfe492c7b9[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Wed May 18 10:30:19 2022 -0700
+
+    chore(server): import bestsellersmodel
+
+[33mcommit 3251de7a9a983100080e849a69f1daaaf5e3127c[m
+Merge: 2574c3d e9b0046
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Tue May 17 11:12:29 2022 -0700
+
+    Merge pull request #37 from sirpuffin1/mek-f5-36-create-post-book-route
+    
+    Mek f5 36 create post book route
+
+[33mcommit e9b00462428aaf98fb5173cdc32bd8feaf57f4de[m
+Merge: 14704ad 2574c3d
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Tue May 17 11:11:09 2022 -0700
+
+    Merge branch 'development' into mek-f5-36-create-post-book-route
+
+[33mcommit 2574c3db6ac4fe4c8f3b689225a0d003c3e5fbfe[m
+Merge: 4a9a038 741e4db
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Tue May 17 11:07:36 2022 -0700
+
+    Merge pull request #35 from sirpuffin1/mek-f5-32-create-book-route
+    
+    Mek f5 32 create book route
+
+[33mcommit 741e4db5999cdcb64ed83725387c4c202bf63b36[m
+Merge: 68edb2d 4d9c3fc
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 17 11:05:06 2022 -0700
+
+    Merge branch 'mek-f5-32-create-book-route' of github.com:sirpuffin1/Ice-Code- into mek-f5-32-create-book-route
+
+[33mcommit 68edb2d5c26689b39eec675ed0006967a566c0a6[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 17 10:50:37 2022 -0700
+
+    feat(index.js):import dotenv file
+
+[33mcommit 14704ad261766d6464fa9dbd693da2f342844657[m
+Merge: 0d315a0 81cbe0c
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 17 10:19:20 2022 -0700
+
+    Merge branch 'mek-f5-36-create-post-book-route' of github.com:sirpuffin1/Ice-Code- into mek-f5-36-create-post-book-route
+
+[33mcommit 0d315a06bdd49785fdb73b8d7c0dc8b7c2a9cb75[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 17 10:17:50 2022 -0700
+
+    feat(index.js):import dotenv file
+
+[33mcommit f750579c54610a9985d56a3948caba56a2bbaa9e[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 17 09:59:05 2022 -0700
+
+    feat(index.js):import dotenv
+
+[33mcommit 81cbe0c04558d0f0f9df789f3a11f0ed90238774[m
+Merge: 812cf60 4a9a038
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Mon May 16 15:10:10 2022 -0700
+
+    Merge branch 'development' into mek-f5-36-create-post-book-route
+
+[33mcommit 812cf600b5441305b649e3c375c0f13f0889a620[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Mon May 16 15:04:30 2022 -0700
+
+    feat(index.js):create post-book-route.
+
+[33mcommit 4d9c3fcae9b53d6d874f2b26ae10adbeccde0730[m
+Merge: 32e8769 4a9a038
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Mon May 16 14:32:15 2022 -0700
+
+    Merge branch 'development' into mek-f5-32-create-book-route
+
+[33mcommit 32e87698a968599b9ba446c0916c6378789e0875[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Mon May 16 14:23:59 2022 -0700
+
+    .
+
+[33mcommit 1b872bce7d034c5499908c8c43ff98dbe502183a[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Mon May 16 14:16:31 2022 -0700
+
+    feat(index.js):create book route
+
+[33mcommit 4a9a03856d2fd7fe590bffdb8b12ec86e324135d[m
+Merge: d91eca3 98c3286
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Mon May 16 12:50:39 2022 -0700
+
+    Merge pull request #34 from sirpuffin1/AC-33-Set-up-.env
+    
+    Ac 33 set up .env
+
+[33mcommit 98c328609699f0c034f1e2228a7822688f43d853[m[33m ([m[1;31morigin/AC-33-Set-up-.env[m[33m)[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 16 10:52:13 2022 -0700
+
+    ref(server): change database url to url in .env
+
+[33mcommit cf90a09f1b39fa1163804012baa7dd6b4a082303[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 16 10:50:32 2022 -0700
+
+    feat(server): configure dotenv
+
+[33mcommit 3532173ed78ed30b9b10e70f3cf31d711cc10f9a[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 16 10:49:33 2022 -0700
+
+    chore(server): import dotenv
+
+[33mcommit 60c7642efbe820eee3a5a2e02a17d8d32ced669f[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 16 10:48:42 2022 -0700
+
+    feat(.env): created a .env file
+    then added the file to .gitignore
+    so no one can see it
+
+[33mcommit cead0ab584ef3a632033b02688df8fbbb64a291e[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 16 10:47:43 2022 -0700
+
+    chore(dotenv): npm i dotenv
+
+[33mcommit d91eca339f2ef5842fdeb635066af0b4a491f059[m
+Merge: f968537 d5a3733
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Mon May 16 10:21:48 2022 -0700
+
+    Merge pull request #31 from sirpuffin1/mek-f4-26-create-bestseller-model
+    
+    Mek f4 26 create bestseller model
+
+[33mcommit f968537927722f843c2109d387a07d2f9e6eccc7[m
+Merge: 9ca7d65 7144d8a
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Mon May 16 10:15:56 2022 -0700
+
+    Merge pull request #24 from sirpuffin1/mek-f4-13-create-book-model
+    
+    Mek f4 13 create book model
+
+[33mcommit d5a3733dce5ed49e2423f918c12b6013c9e9f2c1[m
+Merge: 293bf65 9ca7d65
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Sun May 15 14:38:17 2022 -0700
+
+    Merge branch 'development' into mek-f4-26-create-bestseller-model
+
+[33mcommit 7144d8a68d45aa3ae25f10d05ffb4f28591f8908[m
+Merge: 2424b75 9ca7d65
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Sun May 15 14:37:32 2022 -0700
+
+    Merge branch 'development' into mek-f4-13-create-book-model
+
+[33mcommit 293bf65f80437d964549688ac616b0a1e2785244[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Sun May 15 09:06:52 2022 -0700
+
+    feat(model):create bestsellers model
+
+[33mcommit 9ca7d65dd67d1ff0886871e387421fde245bdca2[m
+Merge: db9c22c 21eb5bc
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Sun May 15 09:02:25 2022 -0700
+
+    Merge pull request #30 from sirpuffin1/it-10-bg-hover-element
+    
+    It 10 bg hover element
+
+[33mcommit 21eb5bc980a488c58b43d1f449bed6f8a96c1465[m[33m ([m[1;31morigin/it-10-bg-hover-element[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 17:39:08 2022 -0700
+
+    style(book cover hover): add color and icon
+
+[33mcommit d264441e61b56fdf11a4318c05343504d2c0cda8[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 17:38:18 2022 -0700
+
+    feat(hover): add hover element for book cover
+
+[33mcommit db9c22cf7bb939b3c7ea24d1ea1e6706171094e8[m
+Merge: a34d824 1b490b7
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Fri May 13 14:15:51 2022 -0700
+
+    Merge pull request #29 from sirpuffin1/it-9-refresh-btn
+    
+    It 9 refresh btn
+
+[33mcommit 1b490b7726fbdb2a104a9a59441f72a9d31acc35[m[33m ([m[1;31morigin/it-9-refresh-btn[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 14:10:21 2022 -0700
+
+    style(refresh btn): changed size of btn
+
+[33mcommit 7fe5e9bfdf4261125ccbf391a366de9629d2c0da[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 14:09:57 2022 -0700
+
+    feat(refresh btn): add refresh btn
+
+[33mcommit a34d82497b16074b93b8b41fcf957fabfdc3e4ce[m
+Merge: 51441f2 da57e84
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Fri May 13 13:57:37 2022 -0700
+
+    Merge pull request #28 from sirpuffin1/it-8-add-book-placeholders
+    
+    It 8 add book placeholders
+
+[33mcommit da57e8426b611f24f5ae302cf678732dedee9523[m[33m ([m[1;31morigin/it-8-add-book-placeholders[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 13:46:17 2022 -0700
+
+    style(books): format book container and shadow
+
+[33mcommit e27b3b30e827d0cc20880c33980a2e9b80340d43[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 13:46:03 2022 -0700
+
+    feat(books): add container to hold book img
+
+[33mcommit 51441f2b749490dd4c0ba63ffcfe31769d13f404[m
+Merge: 4c54634 7451439
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Fri May 13 11:44:00 2022 -0700
+
+    Merge pull request #27 from sirpuffin1/it-6-add-header-icons
+    
+    It 6 add header icons
+
+[33mcommit 74514396d1515c2def954a818d36ceb7dfb1b1ab[m[33m ([m[1;31morigin/it-6-add-header-icons[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 11:34:25 2022 -0700
+
+    style(header): position name and icons
+
+[33mcommit a505c01851f63c3aee730a5cd80a83362dc8fc09[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Fri May 13 11:34:10 2022 -0700
+
+    feat(header): add site name and icons
+
+[33mcommit 4c546346cd8fdeebca7d9470fba4b7241d69af34[m
+Merge: e5448bb cc36a25
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Fri May 13 10:58:54 2022 -0700
+
+    Merge pull request #25 from sirpuffin1/it-7-add-bookshelf
+    
+    It-7-add bookshelf
+
+[33mcommit 2424b75c47253ad37baca6ccdb672e42f64f0c4a[m[33m ([m[1;31morigin/mek-f4-13-create-book-model[m[33m)[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 18:03:06 2022 -0700
+
+    ref(model):remove id,ImgUrl and ISBN.
+
+[33mcommit cc36a2533664ccd1cc8da9e5d51debbace990fce[m[33m ([m[1;31morigin/it-7-add-bookshelf[m[33m)[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Thu May 12 17:56:33 2022 -0700
+
+    style(bookshelf): add color and shelf positioning
+
+[33mcommit 5154a0e5ce44cfa578053a1c92e04e658ebf2adf[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Thu May 12 17:56:06 2022 -0700
+
+    feat(bookshelf): add bg color and bookshelf
+
+[33mcommit 0917ec6634688949f414c24994a1a94becbd26c9[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Thu May 12 17:55:45 2022 -0700
+
+    style(img): cropped shelf img
+
+[33mcommit 8686c5089406840b56c47e1117ef9fa58278a3c2[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 15:51:11 2022 -0700
+
+    .
+
+[33mcommit 8c0a8c4597f648409d8e5223bf8c0879998bb80a[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 15:50:36 2022 -0700
+
+    feat(index.js):create book model
+
+[33mcommit d52990cef3dc710aa6e846908dfbe3e9f105aef9[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 15:49:50 2022 -0700
+
+    feat(pakage):install nodemon auto restart nodejs server.
+
+[33mcommit ad959e8b1e41e95bb223ed50a8159934bd01bdeb[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 15:48:21 2022 -0700
+
+    ref(index.html):add type module
+
+[33mcommit 536b6b80ba4377a043f272ee3adb5430ab979eb4[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Thu May 12 15:47:32 2022 -0700
+
+    ref(client ,index.js):change port number
+
+[33mcommit e5448bbe895a72f5cc72b4e083d942dfe22291ed[m
+Merge: b7c7d9f fba9fdd
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Thu May 12 15:41:37 2022 -0700
+
+    Merge pull request #23 from sirpuffin1/it-19-create-img-folder
+    
+    It-19-create img folder
+
+[33mcommit 1b9ab7527a6d8d8edb817ded1041c7e27a672c88[m
+Merge: 9eafa35 b7c7d9f
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Thu May 12 15:30:10 2022 -0700
+
+    Merge pull request #22 from sirpuffin1/development
+    
+    Create pull_request_template.md
+
+[33mcommit b7c7d9f94110814614d323a0ff45e4ea8449f05c[m
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Thu May 12 15:29:03 2022 -0700
+
+    Create pull_request_template.md
+
+[33mcommit fba9fdd2d7ad52c3754035ea28e04bc5ff290d81[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Thu May 12 15:19:17 2022 -0700
+
+    feat(fonts): add google fonts to css
+
+[33mcommit 043549b906dc51e611d579d6f217435c778e2ed1[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Thu May 12 15:19:04 2022 -0700
+
+    feat(imgFolder): add icons and shelf img
+
+[33mcommit 9eafa3540072ca1bf3d178a206283f9af055df2e[m
+Merge: 1266882 1e74595
+Author: Christina "moon" Zurowski <czurowski@alphaworks.tech>
+Date:   Wed May 11 15:54:33 2022 -0700
+
+    Merge pull request #5 from sirpuffin1/it-1-import-google-fonts
+    
+    It 1 import google fonts
+
+[33mcommit 1e7459533e22dca7140efbfa39dd61135de4aacc[m
+Author: Isabella Tannady <isabellatannady@gmail.com>
+Date:   Wed May 11 15:47:05 2022 -0700
+
+    feat(style): imported google fonts on css
+
+[33mcommit 4f7d09feeb84e3a02a1213621e4532f0080faa49[m
+Merge: 9f0536e 9dfa8df
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Wed May 11 15:30:39 2022 -0700
+
+    Merge pull request #4 from sirpuffin1/mek-f1-3-create-folder-set-up
+    
+    Mek f1 3 create folder set up
+
+[33mcommit 9dfa8df86dd67936f848f727c64e851b8c1201a5[m[33m ([m[1;31morigin/mek-f1-3-create-folder-set-up[m[33m)[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 10 13:29:52 2022 -0700
+
+    gitignore
+
+[33mcommit a1b7f0915aa19d727d985ebaaf06588b67b81260[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 10 13:29:42 2022 -0700
+
+    feat(client) create the client folder.
+
+[33mcommit 11383611ce01da8413e5e745b3982f0200eca6b2[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 10 13:28:30 2022 -0700
+
+    feat(index.js) create index.js file and import express cors and mongoose.
+
+[33mcommit 8ed41b653a1b4c63756f6cc4d5c4d0210e94794a[m
+Author: mekdes <mbayeleyegn@alphawork.tech>
+Date:   Tue May 10 13:26:26 2022 -0700
+
+    feat(pakage):npm init and install express and cors
+
+[33mcommit 9f0536e99d4bbd3fbd95945fa7c7da336ce0b125[m
+Merge: 1266882 4c278fe
+Author: mekdes45 <81194800+mekdes45@users.noreply.github.com>
+Date:   Mon May 9 10:23:54 2022 -0700
+
+    Merge pull request #2 from sirpuffin1/AC-1-Create-html-file
+    
+    feat(html): create an html file
+
+[33mcommit 4c278fe8fff46ed3584548c26323dfb1eb076893[m
+Author: Angel <angelcruz981@yahoo.com>
+Date:   Mon May 9 10:20:03 2022 -0700
+
+    feat(html): create an html file
+
+[33mcommit 12668825b56dc5016877fb5e0bad96c5eb436481[m
+Author: sirpuffin1 <88899213+sirpuffin1@users.noreply.github.com>
+Date:   Mon May 9 10:03:03 2022 -0700
+
+    Initial commit
