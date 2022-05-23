@@ -157,3 +157,32 @@ header h1 {
   cursor: pointer;
 }
 /* Hero ends */
+
+
+
+
+.icons i {
+ 
+  margin-left: 20px;
+ 
+}
+
+
+tr{
+display: flex; 
+justify-content: space-between;
+width: 100vw;
+}
+
+/* #lList{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+#rList{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+ */
