@@ -36,14 +36,16 @@ header img {
 }
 
 header h1 {
+  margin: 0;
   font-family: libre franklin;
   font-weight: 800;
   color: #003744;
+
 }
 
 /* Book container and shelf starts*/
 #shelf-container {
-  margin-top: 5rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   background-color: #f1ece0;
@@ -159,20 +161,15 @@ header h1 {
 /* Hero ends */
 
 
-
-
-.icons i {
- 
+/* .icons i {
   margin-left: 20px;
- 
 }
-
 
 tr{
 display: flex; 
 justify-content: space-between;
 width: 100vw;
-}
+} */
 
 /* #lList{
   display: flex;
@@ -187,3 +184,123 @@ width: 100vw;
 }
  */
 
+
+/* Book list header starts */
+#list-header-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0 2rem 0;
+}
+
+#list-header {
+  width: 80%;
+}
+
+#list-header h3 {
+  font-family: cardo;
+  font-weight: 700;
+}
+
+#list-header p {
+  color: #404040;
+}
+
+/* Book list header ends */
+
+/* Table starts*/
+#table-wrapper {
+  width: 100vw;
+}
+
+#table {
+  width: 80vw;
+  margin: auto;
+  font-family: libre franklin;
+}
+
+#table-header {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #003744;
+}
+
+#table-header h6 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #5f5f5f;
+}
+
+.left-table {
+  margin-left: 2rem;
+}
+
+.right-table {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#table-details {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border-bottom: 1px solid #003744;
+}
+
+#book-title {
+  font-family: cardo;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  margin-left: 2rem;
+}
+
+#book-author {
+  font-size: 14px;
+  color: #404040;
+  margin-left: 2rem;
+}
+
+#table-details img {
+  height: 2rem;
+  margin: 2px 15px 0 0;
+}
+
+#table-details img:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 710px) {
+  #table-header {
+    display: none;
+  }
+
+  #table-details {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #book-title {
+    margin-left: 0;
+  }
+  
+  #book-author {
+    margin-left: 0;
+  }
+
+  #table-details img {
+    margin-bottom: 1rem;
+  }
+
+  #list-header {
+    text-align: center;
+    border-bottom: 2px solid #003744;
+  }
+}
+
+/* Table ends */
