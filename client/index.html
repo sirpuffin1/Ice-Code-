@@ -7,10 +7,7 @@
     <title>Ice Code</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/main.js"></script>
-    <script src="https://kit.fontawesome.com/3972743fc4.js" crossorigin="anonymous"></script>
-    <script type="module" src="./js/main.js"></script>
-    
-    
+ 
   </head>
   <body>
 
@@ -20,7 +17,7 @@
     <div id="toggle">
         <img id="light-icon" src="../client/img/lightToggle.png" alt="" />
       </div>
-        <img src="../client/img/tempLogo.png" alt="" />
+        <img id="logo" src="../client/img/tempLogo.png" alt="" />
         <h1 id="site-name">ICE CODE LIT.</h1> 
     </header>
     <section id="shelf-container">
@@ -60,7 +57,6 @@
      <div id="shelf"></div>
     </section>
     <!-- Hero ends -->
-
     
     <!-- <table class="table">
       <thead>
@@ -130,7 +126,6 @@
       </tbody>
     </table> -->
 
-
     <!-- Book list header -->
     <div id="list-header-wrapper">
       <div id="list-header">
@@ -139,28 +134,29 @@
 
         <!-- "Add New Book" Button --> 
         <button class="addnewbook-btn" id="newBookBtn">Add New Book</button>
-  
+            
+        
         <!-- Start "New Book" Modal -->
-        <div id="newBookModal" class="modal"> <!--Create div for modal-->
-          <div class="bookmodal-box"> <!-- Create div for modal contents-->
-            <span class="closeicon-span">
-              <img src="../client/img/close.png" id="closeNewBookModal" class="close-icon" alt="close-icon">
-            </span>      
-            <div>
-              <h3 class="modal-header">Book Info</h3>
-            </div>
-            <div>
-              <p class="modal-text">Book Title:</p>
-              <input type="text" class="bookmodal-input">
-            </div>
-            <div>
-              <p class="modal-text">Author:</p>
-            <input type="text" class="bookmodal-input">
-            </div>
-            <button class="modal-button">Submit</button>
+      <div id="newBookModal" class="modal"> <!--Create div for modal-->
+        <div class="bookmodal-box"> <!-- Create div for modal contents-->
+          <span class="closeicon-span">
+            <img src="../client/img/close.png" id="closeNewBookModal" class="close-icon" alt="close-icon">
+          </span>      
+          <div>
+            <h3 class="modal-header">Book Info</h3>
           </div>
+          <div>
+            <p class="modal-text">Book Title:</p>
+            <input type="text" class="bookmodal-input">
+          </div>
+          <div>
+            <p class="modal-text">Author:</p>
+          <input type="text" class="bookmodal-input">
+          </div>
+          <button class="modal-button">Submit</button>
         </div>
-        <!-- End New Book Modal -->
+      </div>
+      <!-- End New Book Modal -->
 
       </div>
     </div>
@@ -179,7 +175,7 @@
             <h6 id="remove">Remove</h6>
           </div>
         </div>
-
+        
         <div id="table-details">
           <div class="book-details">
             <p id="book-title">Book Title</p>
@@ -190,22 +186,25 @@
             <img id="check" src="../client/img/read-default.png" alt="" />
             <img id="trashbin" src="../client/img/remove.png" alt="" />
           </div>
-
-          <!-- Start Notes Modal -->
-          <div id="noteModal" class="modal">
-            <div class="notemodal-box">
-              <span class="closeicon-span">
-                <img src="../client/img/close.png" id="closeNoteModal" class="close-icon" alt="close-icon">
-              </span>
-              <h3 class="modal-header">Notes</h3>
-              <textarea id="noteModalInput" class="notemodal-input"></textarea>
-              <span class="button-span"><button class="modal-button">Save</button></span>
-            </div>
-          </div>
-          <!-- End Notes Modal -->
       </div>
     </div>
     <!-- Table ends -->
+
+     <!-- Start Notes Modal -->
+     <div id="noteModal" class="modal">
+      <div class="notemodal-box">
+        <span class="closeicon-span">
+          <img src="../client/img/close.png" id="closeNoteModal" class="close-icon" alt="close-icon">
+        </span>
+        <h3 class="modal-header">Notes</h3>
+        <textarea id="noteModalInput" class="notemodal-input"></textarea>
+        <span class="button-span"><button class="modal-button">Save</button></span>
+      </div>
+    </div>
+    <!-- End Notes Modal -->
+ 
+
+ 
 
     <!-- Footer starts -->
     <footer id="footer">
