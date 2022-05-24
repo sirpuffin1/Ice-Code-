@@ -58,6 +58,7 @@ app.get('/book', async function (req, res) {
 });
 
 
+
 //Delete book by title
 app.delete("/delete-book/:title", function (req, res) {
     const t = req.body.title;
@@ -65,6 +66,30 @@ app.delete("/delete-book/:title", function (req, res) {
       res.json({ data });
     });
   });
+
+//update book by title
+app.put("/update-book/:title", function (req, res) {
+    BooksModel.findOneAndUpdate(
+     req.body.title,
+     {
+       $set: {
+         author: req.body.author,
+         note: req.body.note,
+       },
+     },
+     {
+       new: true,
+     },
+     function (err, updateBook) {
+       if (err) {
+         res.send("Error Updating Book");
+       } else {
+         res.json(updateBook);
+       }
+     }
+   );
+ });
+
 
 app.listen(3001, ()=>{
 console.log("server is running on port 3001");
