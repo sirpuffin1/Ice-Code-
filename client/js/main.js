@@ -101,6 +101,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.getElementById("footer").style.background = "#003744";
     
 
+
     let bookCoverDark = document.querySelectorAll(".book-cover-dark");
     for (let i = 0; i < bookCoverDark.length; i++) {
       bookCoverDark[i].className = "book-cover";
@@ -119,3 +120,45 @@ document.getElementById("light-icon").addEventListener("click", function () {
     }
   }
 });
+
+
+button.addEventListener('click', refreshBooks);
+
+//Modals
+
+const noteModal = document.querySelector("#noteModal");
+const noteIcon = document.querySelector("#noteIcon");
+const closeNoteModal = document.querySelector("#closeNoteModal");
+
+noteIcon.onclick = function() {
+  noteModal.style.display = "block";
+}
+
+closeNoteModal.onclick = function() {
+  noteModal.style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+    if (event.target == noteModal) {
+        noteModal.style.display = "none";
+    }
+})
+
+const newBookModal = document.querySelector("#newBookModal");
+const newBookButton = document.querySelector("#newBookBtn");
+const closeNewBookModal = document.querySelector("#closeNewBookModal");
+
+newBookButton.onclick = function() {
+  newBookModal.style.display = "block";
+}
+
+closeNewBookModal.onclick = function() {
+  newBookModal.style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+    if (event.target == newBookModal) {
+    newBookModal.style.display = "none";
+    }
+})
+

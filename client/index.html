@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ice Code</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
     <script src="https://kit.fontawesome.com/3972743fc4.js" crossorigin="anonymous"></script>
     <script type="module" src="./js/main.js"></script>
     
@@ -136,7 +136,32 @@
       <div id="list-header">
         <h3 id="book-list-header">Book List</h3>
         <p id="header-description">Store your favorite reads here</p>
-        <!-- ***ADD BOOK BUTTON*** -->
+
+        <!-- "Add New Book" Button --> 
+        <button class="addnewbook-btn" id="newBookBtn">Add New Book</button>
+  
+        <!-- Start "New Book" Modal -->
+        <div id="newBookModal" class="modal"> <!--Create div for modal-->
+          <div class="bookmodal-box"> <!-- Create div for modal contents-->
+            <span class="closeicon-span">
+              <img src="../client/img/close.png" id="closeNewBookModal" class="close-icon" alt="close-icon">
+            </span>      
+            <div>
+              <h3 class="modal-header">Book Info</h3>
+            </div>
+            <div>
+              <p class="modal-text">Book Title:</p>
+              <input type="text" class="bookmodal-input">
+            </div>
+            <div>
+              <p class="modal-text">Author:</p>
+            <input type="text" class="bookmodal-input">
+            </div>
+            <button class="modal-button">Submit</button>
+          </div>
+        </div>
+        <!-- End New Book Modal -->
+
       </div>
     </div>
     <!-- Book list header ends -->
@@ -161,12 +186,23 @@
             <p id="book-author">By: Author</p>
           </div>
           <div class="right-table">
-            <img id="note" src="../client/img/note.png" alt="" />
+            <img src="../client/img/note.png" alt="note-icon" class="note-icon" id="noteIcon"/>
             <img id="check" src="../client/img/read-default.png" alt="" />
             <img id="trashbin" src="../client/img/remove.png" alt="" />
           </div>
-        </div>
-        
+
+          <!-- Start Notes Modal -->
+          <div id="noteModal" class="modal">
+            <div class="notemodal-box">
+              <span class="closeicon-span">
+                <img src="../client/img/close.png" id="closeNoteModal" class="close-icon" alt="close-icon">
+              </span>
+              <h3 class="modal-header">Notes</h3>
+              <textarea id="noteModalInput" class="notemodal-input"></textarea>
+              <span class="button-span"><button class="modal-button">Save</button></span>
+            </div>
+          </div>
+          <!-- End Notes Modal -->
       </div>
     </div>
     <!-- Table ends -->
