@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/main.js"></script>
     <script src="https://kit.fontawesome.com/3972743fc4.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
     
     
   </head>
@@ -15,16 +16,16 @@
 
     
     <!-- Hero starts -->
-    <header>
+    <header id="header">
     <div id="toggle">
-        <img src="../client/img/lightToggle.png" alt="" />
+        <img id="light-icon" src="../client/img/lightToggle.png" alt="" />
       </div>
         <img src="../client/img/tempLogo.png" alt="" />
-        <h1>ICE CODE LIT.</h1> 
+        <h1 id="site-name">ICE CODE LIT.</h1> 
     </header>
     <section id="shelf-container">
         <div id="book-container">
-        <div class="book-cover book1">
+        <div id="book1" class="book-cover book1">
         <img id="image0" src="" alt="">
         <div class="book-overlay">
             <div class="overlay-info">
@@ -34,7 +35,7 @@
         </div>
         </div>
         </div>
-        <div class="book-cover book2">
+        <div id="book2" class="book-cover book2">
           <img id="image1" src="" alt="">
           <div class="book-overlay">
               <div class="overlay-info">
@@ -44,7 +45,7 @@
           </div>
           </div>
           </div>
-          <div class="book-cover book3">
+          <div id="book3" class="book-cover book3">
             <img id="image2" src="" alt="">
             <div class="book-overlay">
                 <div class="overlay-info">
@@ -133,9 +134,9 @@
     <!-- Book list header -->
     <div id="list-header-wrapper">
       <div id="list-header">
-        <h3>Book List</h3>
-        <p>Store your favorite reads here</p>
-        
+        <h3 id="book-list-header">Book List</h3>
+        <p id="header-description">Store your favorite reads here</p>
+
         <!-- "Add New Book" Button --> 
         <button class="addnewbook-btn" id="newBookBtn">Add New Book</button>
   
@@ -160,9 +161,9 @@
           </div>
         </div>
         <!-- End New Book Modal -->
+
       </div>
     </div>
-
     <!-- Book list header ends -->
 
     <!-- Table starts -->
@@ -170,12 +171,12 @@
       <div id="table">
         <div id="table-header">
           <div class="left-table">
-            <h6>Details</h6>
+            <h6 id="details">Details</h6>
           </div>
           <div class="right-table">
-            <h6>Notes</h6>
-            <h6>Read</h6>
-            <h6>Remove</h6>
+            <h6 id="notes">Notes</h6>
+            <h6 id="read">Read</h6>
+            <h6 id="remove">Remove</h6>
           </div>
         </div>
 
@@ -206,6 +207,11 @@
     </div>
     <!-- Table ends -->
 
+    <!-- Footer starts -->
+    <footer id="footer">
+      <p>Copyright <span>&copy</span> 2022 IceCode</p>
+    </footer>
+    <!-- Footer ends -->
 
   </body>
 </html>
