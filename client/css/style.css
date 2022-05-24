@@ -304,3 +304,153 @@ width: 100vw;
 }
 
 /* Table ends */
+
+/* Add New Book Button */
+.addnewbook-btn {
+  font-family: Libre Franklin, sans-serif;
+  border-radius: 12px;
+  width: 125px;
+  height: 35px;
+  color: #FFF;
+  background-color: #003744;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* Book Modal */
+.modal {
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 30vh;
+  padding-bottom: 30vh;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.25);
+}
+
+.bookmodal-box {
+  background-color: #D8E2EB;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 20px;
+  width: 450px;
+  justify-content: center;
+}
+
+.closeicon-span {
+  display: flex;
+  justify-content: end;
+}
+
+.close-icon {
+  height: 20px;
+}
+
+.modal-header {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: cardo, serif;
+}
+
+.modal-text {
+  font-size: 15px;
+  margin-bottom: 0;
+  font-family: Libre Franklin, serif;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.bookmodal-input {
+  width: 380px;
+  height: 26px;
+  border-radius: 6px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 3px;
+  margin-bottom: 25px;
+  border: 1px solid #747072;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.button-span {
+  display: flex;
+  justify-content: center;
+}
+.modal-button {
+  background-color: #003744;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #FFF;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 14px;
+  width: 90px;
+  height: 35px;
+}
+
+.note-icon {
+  width: 40px;
+}
+
+.notemodal-box {
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 20px;
+  background-color: #D8E2EB;
+}
+
+.notemodal-input {
+  width: 515px;
+  height: 200px;
+  margin: 15px 15px 0px 15px;
+  border: 1px solid #747072;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+@media (max-width: 710px) {
+  .bookmodal-box {
+    width: 300px;
+  }
+  .bookmodal-input {
+    width: 225px;
+    margin-bottom: 0;
+  }
+  .addnewbook-btn {
+    margin-bottom: 20px;
+  }
+  .notemodal-box {
+    width: 300px;
+  }
+  .notemodal-input {
+    width: 250px;
+    margin-bottom: 0;
+  } 
+  .modal-header {
+    margin-bottom: 0;
+  }
+  .modal-text {
+    margin-top: 30px;
+  }
+  .modal-button {
+    margin-top: 25px;
+  }
+  .right-table {
+    margin-top: 10px;
+  }
+}
