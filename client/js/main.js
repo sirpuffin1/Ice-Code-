@@ -227,3 +227,15 @@ document.getElementById("light-icon").addEventListener("click", function () {
     }
   }
 });
+
+// Read/Unread
+let readButton = document.getElementById("check");
+let read = false;
+readButton.addEventListener("click", function readUnread() {
+    read = !read
+    if (read === true) {
+        readButton.src = "../client/img/read-green.png"
+    } else {
+        readButton.src = "../client/img/read-default.png"
+    }
+})
