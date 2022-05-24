@@ -75,8 +75,8 @@ header h1 {
   width: 14.5rem;
   height: 22rem;
   top: 10px;
-  filter: drop-shadow(7px 0px 15px rgba(2, 29, 35, 0.75))
-    drop-shadow(1px 3px 7px rgba(24, 39, 44, 0.427));
+  filter: drop-shadow(7px 0px 15px rgba(2, 29, 35, 0.743))
+    drop-shadow(1px 3px 7px rgba(21, 29, 32, 0.427));
   z-index: 10;
 }
 
@@ -159,7 +159,6 @@ header h1 {
   color: black;
 }
 
-
 #add-icon {
   position: relative;
   width: 30px;
@@ -226,29 +225,6 @@ header h1 {
 }
 /* Hero ends */
 
-/* .icons i {
-  margin-left: 20px;
-}
-
-tr{
-display: flex; 
-justify-content: space-between;
-width: 100vw;
-} */
-
-/* #lList{
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-}
-
-#rList{
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-}
- */
-
 /* Book list header starts */
 #list-header-wrapper {
   width: 100vw;
@@ -262,11 +238,14 @@ width: 100vw;
 }
 
 #list-header h3 {
+  font-size: 20px;
   font-family: cardo;
   font-weight: 700;
+  line-height: 1.6;
 }
 
 #list-header p {
+  font-family: libre franklin;
   color: #404040;
 }
 
@@ -291,9 +270,11 @@ width: 100vw;
 }
 
 #table-header h6 {
+  margin-bottom: 0.5rem;
   font-size: 18px;
   font-weight: 700;
   color: #5f5f5f;
+  
 }
 
 .left-table {
@@ -326,6 +307,7 @@ width: 100vw;
   font-size: 14px;
   color: #404040;
   margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 #table-details img {
@@ -387,6 +369,7 @@ footer p {
   font-family: libre franklin;
   font-size: 10px;
   color: white;
+  margin-bottom: 0.5rem;
 }
 /* Footer ends */
 
@@ -401,6 +384,8 @@ footer p {
   background-color: #003744;
   font-size: 14px;
   margin-top: 15px;
+  font-weight: 600;
+  border: none;
 }
 
 /* Book Modal */
@@ -482,10 +467,11 @@ footer p {
   padding-bottom: 5px;
   color: #FFF;
   font-size: 14px;
-  border: 1px solid black;
+  border: none;
   border-radius: 14px;
   width: 90px;
   height: 35px;
+  font-weight: 600;
 }
 
 .note-icon {
