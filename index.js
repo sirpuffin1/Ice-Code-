@@ -58,6 +58,15 @@ app.get('/book', async function (req, res) {
 });
 
 
+
+//Delete book by title
+app.delete("/delete-book/:title", function (req, res) {
+    const t = req.body.title;
+    BooksModel.findOneAndDelete(t).then((data) => {
+      res.json({ data });
+    });
+  });
+
 //update book by title
 app.put("/update-book/:title", function (req, res) {
     BooksModel.findOneAndUpdate(
@@ -80,6 +89,7 @@ app.put("/update-book/:title", function (req, res) {
      }
    );
  });
+
 
 app.listen(3001, ()=>{
 console.log("server is running on port 3001");
