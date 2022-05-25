@@ -388,6 +388,10 @@ footer p {
   border: none;
 }
 
+.addnewbook-btn:hover {
+  cursor: pointer;
+}
+
 /* Book Modal */
 .modal {
   text-align: center;
@@ -421,6 +425,10 @@ footer p {
 
 .close-icon {
   height: 20px;
+}
+
+.close-icon:hover {
+  cursor: pointer;
 }
 
 .modal-header {
@@ -472,6 +480,10 @@ footer p {
   width: 90px;
   height: 35px;
   font-weight: 600;
+}
+
+.modal-button:hover {
+  cursor: pointer;
 }
 
 .note-icon {
