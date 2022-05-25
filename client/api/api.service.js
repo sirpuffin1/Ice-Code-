@@ -1,8 +1,16 @@
-export const apiService = ({
-    baseUrl: 'http://localhost:3001/',
-    //create the option to use the apiservice to get information from routes
+export const apiService = {
+    baseUrl: "http://localhost:3001/",
     get(url) {
-        //fetching information from the baseroute + whatever url route we give it
-        return fetch(this.baseUrl + url).then(res => res.json())
-    }
-})
+      return fetch(this.baseUrl + url).then((res) => res.json());
+    },
+    post(url, data) {
+      return fetch(this.baseUrl + url, {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => res.json());
+    },
+  };

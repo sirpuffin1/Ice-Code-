@@ -13,54 +13,112 @@ function refreshBooks() {
     });
   });
 }
+function createBook() {
+  console.log("helloo connected");
+  let bookTitle = document.getElementById("addTitle").value;
+  let bookAuthor = document.getElementById("addAuthor").value;
+  console.log(bookTitle);
+
+  api
+    .post("book", {
+      title: bookTitle,
+      author: bookAuthor,
+      note: "",
+    })
+    .then((data) => console.log(data));
+}
+
+const noteModal = document.querySelector("#noteModal");
+function noteModalfun() {
+  noteModal.style.display = "block";
+  console.log('heyyyy')
+}
+
+
+function showBooks() {
+  api.get("book").then((data) => {
+    data.forEach((book) => {
+      let tableDetailsContainer = document.getElementById(
+        "table-details-container"
+      );
+      // tableDetails.setAttribute('table-details');
+      console.log(book.title);
+      // let bookDetails = document.createElement('div');
+      // bookDetails.classList.add('book-details');
+
+      // let book_title = document.createElement('p');
+      // book_title.setAttribute('book-title');
+
+      // let book_author = document.createElement('p');
+      // book_author.setAttribute('book-author');
+
+      // element.classList.add("mystyle")
+
+      let bookytable = `
+      <div id='table-details'>
+          <div class='book-details'>
+            <p id='book-title'>${book.title}</p>
+            <p id='book-author'>${book.author}</p>
+          </div>
+          <div class='right-table'>
+            <img onclick='noteModalfun()' src='../client/img/note.png' alt='note-icon' class='note-icon' id='noteIcon'/>
+            <img onclick='${readUnread}' id='check' src='../client/img/read-default.png' alt='' />
+            <img id='trashbin' src='../client/img/remove.png' alt='' />
+          </div>
+          </div>
+
+          
+       `;
+
+      tableDetailsContainer.innerHTML += bookytable;
+    });
+  });
+}
 
 window.onload = refreshBooks;
+window.onload = showBooks;
 
 const button = document.getElementById("refresh-icon");
 
+const submitBookButton = document.getElementById("submitBook");
+submitBookButton.addEventListener("click", createBook);
+
 button.addEventListener("click", refreshBooks);
-
-
-button.addEventListener('click', refreshBooks);
 
 //Modals
 
-const noteModal = document.querySelector("#noteModal");
+
 const noteIcon = document.querySelector("#noteIcon");
 const closeNoteModal = document.querySelector("#closeNoteModal");
 
-noteIcon.onclick = function() {
-  noteModal.style.display = "block";
-}
-
-closeNoteModal.onclick = function() {
+closeNoteModal.onclick = function () {
   noteModal.style.display = "none";
-}
+};
 
-window.addEventListener("click", function(event) {
-    if (event.target == noteModal) {
-        noteModal.style.display = "none";
-    }
-})
+window.addEventListener("click", function (event) {
+  if (event.target == noteModal) {
+    noteModal.style.display = "none";
+  }
+});
 
 const newBookModal = document.querySelector("#newBookModal");
 const newBookButton = document.querySelector("#newBookBtn");
 const closeNewBookModal = document.querySelector("#closeNewBookModal");
 
-newBookButton.onclick = function() {
+
+newBookButton.addEventListener("click", function () {
   newBookModal.style.display = "block";
-}
+});
 
-closeNewBookModal.onclick = function() {
+closeNewBookModal.onclick = function () {
   newBookModal.style.display = "none";
-}
+};
 
-window.addEventListener("click", function(event) {
-    if (event.target == newBookModal) {
+window.addEventListener("click", function (event) {
+  if (event.target == newBookModal) {
     newBookModal.style.display = "none";
-    }
-})
-
+  }
+});
 
 // Dark-mode toggle
 let light = false;
@@ -78,15 +136,18 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.body.style.background = "#1F2933";
     document.getElementById("site-name").style.color = "white";
     document.getElementById("shelf").id = "shelf-dark";
-    document.getElementById("refresh-icon").src = "../client/img/refresh-dark.png"
+    document.getElementById("refresh-icon").src =
+      "../client/img/refresh-dark.png";
     document.getElementById("book-list-header").style.color = "white";
     document.getElementById("header-description").style.color = "#EAEAEA";
     document.getElementById("list-header").style.borderBottomColor = "#D8E2EB";
     document.getElementById("book-title").style.color = "white";
     document.getElementById("book-author").style.color = "white";
-    document.getElementById("table-details").style.borderBottomColor = "#D8E2EB";
+    document.getElementById("table-details").style.borderBottomColor =
+      "#D8E2EB";
     document.getElementById("noteIcon").src = "../client/img/note-dark.png";
-    document.getElementById("check").src = "../client/img/read-dark-default.png";
+    document.getElementById("check").src =
+      "../client/img/read-dark-default.png";
     document.getElementById("trashbin").src = "../client/img/remove-dark.png";
     document.getElementById("details").style.color = "white";
     document.getElementById("notes").style.color = "white";
@@ -120,7 +181,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
       modalBtn[i].style.background = "#3BD3BD";
       modalBtn[i].style.color = "#1F2933";
     }
-    
+
     let bookModalInput = document.querySelectorAll(".bookmodal-input");
     for (let i = 0; i < bookModalInput.length; i++) {
       bookModalInput[i].style.background = "#9AA5B1";
@@ -147,9 +208,8 @@ document.getElementById("light-icon").addEventListener("click", function () {
     for (let i = 0; i < bookAuthor.length; i++) {
       bookAuthor[i].className = "book-cover-author-dark";
     }
-
   } else {
-    console.log("bye")
+    console.log("bye");
     toggle.src = "../client/img/lightToggle.png";
     document.getElementById("header").style.background = "#f1ece0";
     document.body.style.background = "none";
@@ -163,7 +223,8 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.getElementById("list-header").style.borderBottomColor = "#003744";
     document.getElementById("book-title").style.color = "black";
     document.getElementById("book-author").style.color = "#404040";
-    document.getElementById("table-details").style.borderBottomColor = "#003744";
+    document.getElementById("table-details").style.borderBottomColor =
+      "#003744";
     document.getElementById("noteIcon").src = "../client/img/note.png";
     document.getElementById("check").src = "../client/img/read-default.png";
     document.getElementById("trashbin").src = "../client/img/remove.png";
@@ -187,16 +248,12 @@ document.getElementById("light-icon").addEventListener("click", function () {
     let modalHeader = document.querySelectorAll(".modal-header");
     for (let i = 0; i < modalHeader.length; i++) {
       modalHeader[i].style.color = "#404040";
-      
     }
-
 
     let modalBtn = document.querySelectorAll(".modal-button");
     for (let i = 0; i < modalBtn.length; i++) {
       modalBtn[i].style.background = "#003744";
       modalBtn[i].style.color = "white";
-
-
     }
 
     let bookModalInput = document.querySelectorAll(".bookmodal-input");
@@ -229,13 +286,15 @@ document.getElementById("light-icon").addEventListener("click", function () {
 });
 
 // Read/Unread
-let readButton = document.getElementById("check");
-let read = false;
-readButton.addEventListener("click", function readUnread() {
-    read = !read
-    if (read === true) {
-        readButton.src = "../client/img/read-green.png"
-    } else {
-        readButton.src = "../client/img/read-default.png"
-    }
-})
+
+function readUnread() {
+  let readButton = document.getElementById("check");
+  console.log('readunreadtest')
+  let read = false;
+  read = !read;
+  if (read === true) {
+    readButton.src = "../client/img/read-green.png";
+  } else {
+    readButton.src = "../client/img/read-default.png";
+  }
+}

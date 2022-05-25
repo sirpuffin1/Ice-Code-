@@ -295,6 +295,11 @@ header h1 {
   border-bottom: 1px solid #003744;
 }
 
+#table-details-container {
+  
+  width: 80vw;
+}
+
 #book-title {
   font-family: cardo;
   font-weight: 700;
