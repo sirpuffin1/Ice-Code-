@@ -72,7 +72,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
   if (light === true) {
     toggle.src = "../client/img/lightToggle-dark.png";
-    console.log("hello");
+
     document.getElementById("header").style.background = "#323F4B";
     document.getElementById("shelf-container").style.background = "#323F4B";
     document.body.style.background = "#1F2933";
@@ -82,12 +82,6 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.getElementById("book-list-header").style.color = "white";
     document.getElementById("header-description").style.color = "#EAEAEA";
     document.getElementById("list-header").style.borderBottomColor = "#D8E2EB";
-    document.getElementById("book-title").style.color = "white";
-    document.getElementById("book-author").style.color = "white";
-    document.getElementById("table-details").style.borderBottomColor = "#D8E2EB";
-    document.getElementById("noteIcon").src = "../client/img/note-dark.png";
-    document.getElementById("check").src = "../client/img/read-dark-default.png";
-    document.getElementById("trashbin").src = "../client/img/remove-dark.png";
     document.getElementById("details").style.color = "white";
     document.getElementById("notes").style.color = "white";
     document.getElementById("read").style.color = "white";
@@ -100,6 +94,37 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".modal-header").style.color = "white";
     document.querySelector(".notemodal-box").style.background = "#52606D";
     document.getElementById("logo").src = "../client/img/tempLogo-dark.png";
+
+    let bookTitleDetails = document.querySelectorAll("#book-title");
+    for (let i = 0; i < bookTitleDetails.length; i++) {
+      bookTitleDetails[i].style.color = "white";
+    }
+    console.log("hello");
+
+    let bookAuthorDetails = document.querySelectorAll("#book-author");
+    for (let i = 0; i < bookAuthorDetails.length; i++) {
+      bookAuthorDetails[i].style.color = "white";
+    }
+
+    let tableDetails = document.querySelectorAll("#table-details");
+    for (let i = 0; i < tableDetails.length; i++) {
+      tableDetails[i].style.borderBottomColor = "#D8E2EB";
+    }
+
+    let noteIcon = document.querySelectorAll("#noteIcon");
+    for (let i = 0; i < noteIcon.length; i++) {
+      noteIcon[i].src = "../client/img/note-dark.png";
+    }
+
+    let check = document.querySelectorAll("#check");
+    for (let i = 0; i < check.length; i++) {
+      check[i].src = "../client/img/read-dark-default.png";
+    }
+
+    let trashbin = document.querySelectorAll("#trashbin");
+    for (let i = 0; i < trashbin.length; i++) {
+      trashbin[i].src = "../client/img/remove-dark.png";
+    }
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
@@ -150,7 +175,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     }
 
   } else {
-    console.log("bye")
+  
     toggle.src = "../client/img/lightToggle.png";
     document.getElementById("header").style.background = "#f1ece0";
     document.body.style.background = "none";
@@ -162,12 +187,6 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.getElementById("book-list-header").style.color = "black";
     document.getElementById("header-description").style.color = "#404040";
     document.getElementById("list-header").style.borderBottomColor = "#003744";
-    document.getElementById("book-title").style.color = "black";
-    document.getElementById("book-author").style.color = "#404040";
-    document.getElementById("table-details").style.borderBottomColor = "#003744";
-    document.getElementById("noteIcon").src = "../client/img/note.png";
-    document.getElementById("check").src = "../client/img/read-default.png";
-    document.getElementById("trashbin").src = "../client/img/remove.png";
     document.getElementById("details").style.color = "#5f5f5f";
     document.getElementById("notes").style.color = "#5f5f5f";
     document.getElementById("read").style.color = "#5f5f5f";
@@ -180,6 +199,36 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".bookmodal-input").style.backgroundColor = "white";
     document.querySelector(".notemodal-box").style.background = "#D8E2EB";
     document.getElementById("logo").src = "../client/img/tempLogo.png";
+
+    let bookTitleDetails = document.querySelectorAll("#book-title");
+    for (let i = 0; i < bookTitleDetails.length; i++) {
+      bookTitleDetails[i].style.color = "black";
+    }
+    console.log("bye")
+    let bookAuthorDetails = document.querySelectorAll("#book-author");
+    for (let i = 0; i < bookAuthorDetails.length; i++) {
+      bookAuthorDetails[i].style.color = "#404040";
+    }
+
+    let tableDetails = document.querySelectorAll("#table-details");
+    for (let i = 0; i < tableDetails.length; i++) {
+      tableDetails[i].style.borderBottomColor = "#003744";
+    }
+
+    let noteIcon = document.querySelectorAll("#noteIcon");
+    for (let i = 0; i < noteIcon.length; i++) {
+      noteIcon[i].src = "../client/img/note.png";
+    }
+
+    let check = document.querySelectorAll("#check");
+    for (let i = 0; i < check.length; i++) {
+      check[i].src = "../client/img/read-default.png";
+    }
+
+    let trashbin = document.querySelectorAll("#trashbin");
+    for (let i = 0; i < trashbin.length; i++) {
+      trashbin[i].src = "../client/img/remove.png";
+    }
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
@@ -201,8 +250,6 @@ document.getElementById("light-icon").addEventListener("click", function () {
     for (let i = 0; i < modalBtn.length; i++) {
       modalBtn[i].style.background = "#003744";
       modalBtn[i].style.color = "white";
-
-
     }
 
     let bookModalInput = document.querySelectorAll(".bookmodal-input");
