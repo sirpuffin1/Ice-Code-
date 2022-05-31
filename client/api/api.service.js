@@ -13,4 +13,14 @@ export const apiService = {
         body: JSON.stringify(data),
       }).then((res) => res.json());
     },
+    put(url, data) {
+      return fetch(this.baseUrl + url, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => res.json())
+    }
   };

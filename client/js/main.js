@@ -1,5 +1,7 @@
 import { apiService as api } from "../api/api.service.js";
 
+
+
 function refreshBooks() {
   api.get("bestsellers").then((data) => {
     data.forEach((book, index) => {
@@ -7,8 +9,16 @@ function refreshBooks() {
       let bookTitle = document.getElementById(`title${index}`);
       let bookAuthor = document.getElementById(`author${index}`);
 
+      const upperCaseFirstLetter = string =>
+      `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+     
+     const lowerCaseAllWordsExceptFirstLetters = string =>
+      string.replaceAll(/\S*/g, word =>
+       `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
+      );
+
       bookImage.src = book.imgUrl;
-      bookTitle.innerHTML = book.title;
+      bookTitle.innerHTML = upperCaseFirstLetter(lowerCaseAllWordsExceptFirstLetters(book.title));
       bookAuthor.innerHTML = book.author;
     });
   });
@@ -26,57 +36,155 @@ function createBook() {
       note: "",
     })
     .then((data) => console.log(data));
+    let tableContainer = document.getElementById("table-details-container");
+  while (tableContainer.firstChild) {
+    tableContainer.removeChild(tableContainer.firstChild);
+  }
+  let showy = setTimeout(showBooks, 100);
 }
 
-const noteModal = document.querySelector("#noteModal");
-function noteModalfun() {
-  noteModal.style.display = "block";
-  console.log('heyyyy')
+function updateNotes(number, string) {
+  let updateNotesText = document.getElementById(`noteModalInput${number}`)
+  console.log(updateNotesText, string )
+  api.put(`update-book/${string}`, {
+    note: updateNotesText.value
+  })
+  .then((data) => console.log(data))
+  let tableContainer = document.getElementById("table-details-container");
+  while (tableContainer.firstChild) {
+    tableContainer.removeChild(tableContainer.firstChild);
+  }
+  showBooks();
+}
+
+
+
+function noteModalfun(number) {
+  const noteModaFrag = document.getElementById(`noteModal${number}`);
+
+  noteModaFrag.style.display = "block";
 }
 
 
 function showBooks() {
   api.get("book").then((data) => {
-    data.forEach((book) => {
-      let tableDetailsContainer = document.getElementById(
-        "table-details-container"
-      );
-      // tableDetails.setAttribute('table-details');
+    data.forEach((book, index) => {
+      
       console.log(book.title);
-      // let bookDetails = document.createElement('div');
-      // bookDetails.classList.add('book-details');
+      let tableDetails = document.createElement('div');
+      let bookDetails = document.createElement('div');
+      let tableDetailsContainer = document.getElementById('table-details-container');
+      let tableRight = document.createElement('div');
+      let noteModalContainer = document.getElementById('noteModalContainer');
+      
+      let noteModal = document.createElement('div')
+      noteModal.id = `noteModal${index}`
+      noteModal.className = 'modal'
 
-      // let book_title = document.createElement('p');
-      // book_title.setAttribute('book-title');
+      let noteModalBox = document.createElement('div');
+      noteModalBox.className = 'notemodal-box'
 
-      // let book_author = document.createElement('p');
-      // book_author.setAttribute('book-author');
+      let closeIconSpan = document.createElement('span');
+      closeIconSpan.className = 'closeicon-span'
+      let closeImage = document.createElement('img');
+      closeImage.src = "../client/img/close.png"
+      closeImage.id = "closeNoteModal"
+      closeImage.className = "close-icon"
+      closeImage.addEventListener('click', function() {
+        noteModal.style.display = "none";
+      })
+      closeIconSpan.appendChild(closeImage);
 
-      // element.classList.add("mystyle")
+      let modalHeader = document.createElement('h3');
+      modalHeader.className = "modal-header";
+      modalHeader.innerHTML = "Notes";
 
-      let bookytable = `
-      <div id='table-details'>
-          <div class='book-details'>
-            <p id='book-title'>${book.title}</p>
-            <p id='book-author'>${book.author}</p>
-          </div>
-          <div class='right-table'>
-            <img onclick='noteModalfun()' src='../client/img/note.png' alt='note-icon' class='note-icon' id='noteIcon'/>
-            <img onclick='${readUnread}' id='check' src='../client/img/read-default.png' alt='' />
-            <img id='trashbin' src='../client/img/remove.png' alt='' />
-          </div>
-          </div>
+      let modalInput = document.createElement('textarea')
+      modalInput.id = `noteModalInput${index}`;
+      modalInput.className = "notemodal-input"
+      
 
-          
-       `;
+      noteModalBox.appendChild(closeIconSpan);
+      noteModalBox.appendChild(modalHeader)
+      noteModalBox.appendChild(modalInput)
 
-      tableDetailsContainer.innerHTML += bookytable;
+      let noteButtonSpan = document.createElement('span');
+      noteButtonSpan.className = 'button-span'
+      let modalButton = document.createElement('button')
+      modalButton.className = 'modal-button'
+      modalButton.innerHTML = "Save"
+      modalButton.id = `modalButton${index}`
+      modalButton.addEventListener('click', function() {
+        updateNotes(index, book.title)
+      })
+      noteButtonSpan.appendChild(modalButton)
+      noteModalBox.appendChild(noteButtonSpan)
+
+      noteModal.appendChild(noteModalBox)
+      noteModalContainer.appendChild(noteModal)
+
+      bookDetails.className = 'book-details'; 
+      let bookTitle = document.createElement('p');
+      bookTitle.id = 'book-title'
+      bookTitle.className = `bookTitleClass${index}`
+      bookTitle.innerHTML = book.title
+
+      let bookAuthor = document.createElement('p');
+      bookAuthor.id = 'book-author'
+      bookAuthor.className = `bookAuthorClass${index}`
+      bookAuthor.innerHTML = book.author
+
+      tableRight.className = 'right-table'
+
+      let noteIcon = document.createElement('img');
+      noteIcon.id = 'noteIcon';
+      noteIcon.className = `note-icon${index}`;
+      noteIcon.setAttribute('src', '../client/img/note.png')
+      noteIcon.addEventListener('click', function() {
+        modalInput.value = book.note
+        noteModalfun(index)
+        
+      })
+      tableRight.appendChild(noteIcon)
+      window.addEventListener("click", function (event) {
+        if (event.target == noteModal) {
+          noteModal.style.display = "none";
+        }
+      });
+
+      let readIcon = document.createElement('img');
+      readIcon.id = 'check';
+      readIcon.className = `read-icon${index}`
+      if(book.isRead == false) {
+        readIcon.setAttribute('src', '../client/img/read-default.png');
+      } else {
+        readIcon.setAttribute('src', '../client/img/read-green.png');
+      }
+      // readIcon.setAttribute('src', '../client/img/read-default.png');
+      readIcon.addEventListener('click', function() {
+        readUnread(index)
+      })
+      tableRight.appendChild(readIcon)
+
+      let trashIcon = document.createElement('img');
+      trashIcon.id = 'trashbin';
+      trashIcon.className = `trash-icon${index}`
+      trashIcon.setAttribute('src', '../client/img/remove.png');
+      tableRight.appendChild(trashIcon)
+
+      bookDetails.appendChild(bookTitle);
+      bookDetails.appendChild(bookAuthor)
+
+      tableDetails.appendChild(bookDetails)
+      tableDetails.appendChild(tableRight)
+
+      tableDetails.id = 'table-details'
+      tableDetailsContainer.appendChild(tableDetails)
     });
   });
 }
-
-window.onload = refreshBooks;
-window.onload = showBooks;
+refreshBooks()
+showBooks()
 
 const button = document.getElementById("refresh-icon");
 
@@ -89,17 +197,16 @@ button.addEventListener("click", refreshBooks);
 
 
 const noteIcon = document.querySelector("#noteIcon");
-const closeNoteModal = document.querySelector("#closeNoteModal");
+// const closeNoteModal = document.querySelector("#closeNoteModal");
 
-closeNoteModal.onclick = function () {
-  noteModal.style.display = "none";
-};
+// closeImage.onclick = 
 
-window.addEventListener("click", function (event) {
-  if (event.target == noteModal) {
-    noteModal.style.display = "none";
-  }
-});
+
+// window.addEventListener("click", function (event) {
+//   if (event.target == noteModal) {
+//     noteModal.style.display = "none";
+//   }
+// });
 
 const newBookModal = document.querySelector("#newBookModal");
 const newBookButton = document.querySelector("#newBookBtn");
@@ -287,14 +394,22 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
 // Read/Unread
 
-function readUnread() {
-  let readButton = document.getElementById("check");
-  console.log('readunreadtest')
-  let read = false;
+
+let read = false;
+function readUnread(number) {
+  let readButton = document.querySelector(`.read-icon${number}`);
+  let bookTitler = document.querySelector(`.bookTitleClass${number}`).innerHTML
+ 
   read = !read;
   if (read === true) {
     readButton.src = "../client/img/read-green.png";
   } else {
     readButton.src = "../client/img/read-default.png";
   }
+
+
+  api.put(`update-books-read/${bookTitler}`, {
+    isRead: !read
+  })
+  .then((data) => console.log(data))
 }
