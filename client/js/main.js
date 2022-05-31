@@ -1,7 +1,5 @@
 import { apiService as api } from "../api/api.service.js";
 
-
-
 function refreshBooks() {
   api.get("bestsellers").then((data) => {
     data.forEach((book, index) => {
@@ -9,16 +7,19 @@ function refreshBooks() {
       let bookTitle = document.getElementById(`title${index}`);
       let bookAuthor = document.getElementById(`author${index}`);
 
-      const upperCaseFirstLetter = string =>
-      `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
-     
-     const lowerCaseAllWordsExceptFirstLetters = string =>
-      string.replaceAll(/\S*/g, word =>
-       `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
-      );
+      const upperCaseFirstLetter = (string) =>
+        `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+
+      const lowerCaseAllWordsExceptFirstLetters = (string) =>
+        string.replaceAll(
+          /\S*/g,
+          (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
+        );
 
       bookImage.src = book.imgUrl;
-      bookTitle.innerHTML = upperCaseFirstLetter(lowerCaseAllWordsExceptFirstLetters(book.title));
+      bookTitle.innerHTML = upperCaseFirstLetter(
+        lowerCaseAllWordsExceptFirstLetters(book.title)
+      );
       bookAuthor.innerHTML = book.author;
     });
   });
@@ -36,7 +37,7 @@ function createBook() {
       note: "",
     })
     .then((data) => console.log(data));
-    let tableContainer = document.getElementById("table-details-container");
+  let tableContainer = document.getElementById("table-details-container");
   while (tableContainer.firstChild) {
     tableContainer.removeChild(tableContainer.firstChild);
   }
@@ -44,12 +45,13 @@ function createBook() {
 }
 
 function updateNotes(number, string) {
-  let updateNotesText = document.getElementById(`noteModalInput${number}`)
-  console.log(updateNotesText, string )
-  api.put(`update-book/${string}`, {
-    note: updateNotesText.value
-  })
-  .then((data) => console.log(data))
+  let updateNotesText = document.getElementById(`noteModalInput${number}`);
+  console.log(updateNotesText, string);
+  api
+    .put(`update-book/${string}`, {
+      note: updateNotesText.value,
+    })
+    .then((data) => console.log(data));
   let tableContainer = document.getElementById("table-details-container");
   while (tableContainer.firstChild) {
     tableContainer.removeChild(tableContainer.firstChild);
@@ -57,134 +59,130 @@ function updateNotes(number, string) {
   showBooks();
 }
 
-
-
 function noteModalfun(number) {
   const noteModaFrag = document.getElementById(`noteModal${number}`);
 
   noteModaFrag.style.display = "block";
 }
 
-
 function showBooks() {
   api.get("book").then((data) => {
     data.forEach((book, index) => {
-      
       console.log(book.title);
-      let tableDetails = document.createElement('div');
-      let bookDetails = document.createElement('div');
-      let tableDetailsContainer = document.getElementById('table-details-container');
-      let tableRight = document.createElement('div');
-      let noteModalContainer = document.getElementById('noteModalContainer');
-      
-      let noteModal = document.createElement('div')
-      noteModal.id = `noteModal${index}`
-      noteModal.className = 'modal'
+      let tableDetails = document.createElement("div");
+      let bookDetails = document.createElement("div");
+      let tableDetailsContainer = document.getElementById(
+        "table-details-container"
+      );
+      let tableRight = document.createElement("div");
+      let noteModalContainer = document.getElementById("noteModalContainer");
 
-      let noteModalBox = document.createElement('div');
-      noteModalBox.className = 'notemodal-box'
+      let noteModal = document.createElement("div");
+      noteModal.id = `noteModal${index}`;
+      noteModal.className = "modal";
 
-      let closeIconSpan = document.createElement('span');
-      closeIconSpan.className = 'closeicon-span'
-      let closeImage = document.createElement('img');
-      closeImage.src = "../client/img/close.png"
-      closeImage.id = "closeNoteModal"
-      closeImage.className = "close-icon"
-      closeImage.addEventListener('click', function() {
+      let noteModalBox = document.createElement("div");
+      noteModalBox.className = "notemodal-box";
+
+      let closeIconSpan = document.createElement("span");
+      closeIconSpan.className = "closeicon-span";
+      let closeImage = document.createElement("img");
+      closeImage.src = "../client/img/close.png";
+      closeImage.id = "closeNoteModal";
+      closeImage.className = "close-icon";
+      closeImage.addEventListener("click", function () {
         noteModal.style.display = "none";
-      })
+      });
       closeIconSpan.appendChild(closeImage);
 
-      let modalHeader = document.createElement('h3');
+      let modalHeader = document.createElement("h3");
       modalHeader.className = "modal-header";
       modalHeader.innerHTML = "Notes";
 
-      let modalInput = document.createElement('textarea')
+      let modalInput = document.createElement("textarea");
       modalInput.id = `noteModalInput${index}`;
-      modalInput.className = "notemodal-input"
-      
+      modalInput.className = "notemodal-input";
 
       noteModalBox.appendChild(closeIconSpan);
-      noteModalBox.appendChild(modalHeader)
-      noteModalBox.appendChild(modalInput)
+      noteModalBox.appendChild(modalHeader);
+      noteModalBox.appendChild(modalInput);
 
-      let noteButtonSpan = document.createElement('span');
-      noteButtonSpan.className = 'button-span'
-      let modalButton = document.createElement('button')
-      modalButton.className = 'modal-button'
-      modalButton.innerHTML = "Save"
-      modalButton.id = `modalButton${index}`
-      modalButton.addEventListener('click', function() {
-        updateNotes(index, book.title)
-      })
-      noteButtonSpan.appendChild(modalButton)
-      noteModalBox.appendChild(noteButtonSpan)
+      let noteButtonSpan = document.createElement("span");
+      noteButtonSpan.className = "button-span";
+      let modalButton = document.createElement("button");
+      modalButton.className = "modal-button";
+      modalButton.innerHTML = "Save";
+      modalButton.id = `modalButton${index}`;
+      modalButton.addEventListener("click", function () {
+        updateNotes(index, book.title);
+      });
+      noteButtonSpan.appendChild(modalButton);
+      noteModalBox.appendChild(noteButtonSpan);
 
-      noteModal.appendChild(noteModalBox)
-      noteModalContainer.appendChild(noteModal)
+      noteModal.appendChild(noteModalBox);
+      noteModalContainer.appendChild(noteModal);
 
-      bookDetails.className = 'book-details'; 
-      let bookTitle = document.createElement('p');
-      bookTitle.id = 'book-title'
-      bookTitle.className = `bookTitleClass${index}`
-      bookTitle.innerHTML = book.title
+      bookDetails.className = "book-details";
+      let bookTitle = document.createElement("p");
+      bookTitle.id = "book-title";
+      bookTitle.className = `bookTitleClass${index}`;
+      bookTitle.innerHTML = book.title;
 
-      let bookAuthor = document.createElement('p');
-      bookAuthor.id = 'book-author'
-      bookAuthor.className = `bookAuthorClass${index}`
-      bookAuthor.innerHTML = book.author
+      let bookAuthor = document.createElement("p");
+      bookAuthor.id = "book-author";
+      bookAuthor.className = `bookAuthorClass${index}`;
+      bookAuthor.innerHTML = book.author;
 
-      tableRight.className = 'right-table'
+      tableRight.className = "right-table";
 
-      let noteIcon = document.createElement('img');
-      noteIcon.id = 'noteIcon';
+      let noteIcon = document.createElement("img");
+      noteIcon.id = "noteIcon";
       noteIcon.className = `note-icon${index}`;
-      noteIcon.setAttribute('src', '../client/img/note.png')
-      noteIcon.addEventListener('click', function() {
-        modalInput.value = book.note
-        noteModalfun(index)
-        
-      })
-      tableRight.appendChild(noteIcon)
+      noteIcon.setAttribute("src", "../client/img/note.png");
+      noteIcon.addEventListener("click", function () {
+        modalInput.value = book.note;
+        noteModalfun(index);
+      });
+      tableRight.appendChild(noteIcon);
       window.addEventListener("click", function (event) {
         if (event.target == noteModal) {
           noteModal.style.display = "none";
         }
       });
 
-      let readIcon = document.createElement('img');
-      readIcon.id = 'check';
-      readIcon.className = `read-icon${index}`
-      if(book.isRead == false) {
-        readIcon.setAttribute('src', '../client/img/read-default.png');
+      let readIcon = document.createElement("img");
+      readIcon.id = "check";
+      readIcon.className = `read-icon${index}`;
+      if (book.isRead == false) {
+        readIcon.setAttribute("src", "../client/img/read-default.png");
       } else {
-        readIcon.setAttribute('src', '../client/img/read-green.png');
+        readIcon.setAttribute("src", "../client/img/read-green.png");
       }
       // readIcon.setAttribute('src', '../client/img/read-default.png');
-      readIcon.addEventListener('click', function() {
-        readUnread(index)
-      })
-      tableRight.appendChild(readIcon)
+      readIcon.addEventListener("click", function () {
+        readUnread(index);
+      });
+      tableRight.appendChild(readIcon);
 
-      let trashIcon = document.createElement('img');
-      trashIcon.id = 'trashbin';
-      trashIcon.className = `trash-icon${index}`
-      trashIcon.setAttribute('src', '../client/img/remove.png');
-      tableRight.appendChild(trashIcon)
+      let trashIcon = document.createElement("img");
+      trashIcon.id = "trashbin";
+      trashIcon.className = `trash-icon${index}`;
+      trashIcon.setAttribute("src", "../client/img/remove.png");
+      tableRight.appendChild(trashIcon);
 
       bookDetails.appendChild(bookTitle);
-      bookDetails.appendChild(bookAuthor)
+      bookDetails.appendChild(bookAuthor);
 
-      tableDetails.appendChild(bookDetails)
-      tableDetails.appendChild(tableRight)
+      tableDetails.appendChild(bookDetails);
+      tableDetails.appendChild(tableRight);
 
-      tableDetails.id = 'table-details'
-      tableDetailsContainer.appendChild(tableDetails)
+      tableDetails.id = "table-details";
+      tableDetailsContainer.appendChild(tableDetails);
     });
   });
 }
-refreshBooks()
-showBooks()
+refreshBooks();
+showBooks();
 
 const button = document.getElementById("refresh-icon");
 
@@ -195,12 +193,10 @@ button.addEventListener("click", refreshBooks);
 
 //Modals
 
-
 const noteIcon = document.querySelector("#noteIcon");
 // const closeNoteModal = document.querySelector("#closeNoteModal");
 
-// closeImage.onclick = 
-
+// closeImage.onclick =
 
 // window.addEventListener("click", function (event) {
 //   if (event.target == noteModal) {
@@ -211,7 +207,6 @@ const noteIcon = document.querySelector("#noteIcon");
 const newBookModal = document.querySelector("#newBookModal");
 const newBookButton = document.querySelector("#newBookBtn");
 const closeNewBookModal = document.querySelector("#closeNewBookModal");
-
 
 newBookButton.addEventListener("click", function () {
   newBookModal.style.display = "block";
@@ -237,7 +232,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
   if (light === true) {
     toggle.src = "../client/img/lightToggle-dark.png";
-    console.log("hello");
+
     document.getElementById("header").style.background = "#323F4B";
     document.getElementById("shelf-container").style.background = "#323F4B";
     document.body.style.background = "#1F2933";
@@ -268,6 +263,37 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".modal-header").style.color = "white";
     document.querySelector(".notemodal-box").style.background = "#52606D";
     document.getElementById("logo").src = "../client/img/tempLogo-dark.png";
+
+    let bookTitleDetails = document.querySelectorAll("#book-title");
+    for (let i = 0; i < bookTitleDetails.length; i++) {
+      bookTitleDetails[i].style.color = "white";
+    }
+    console.log("hello");
+
+    let bookAuthorDetails = document.querySelectorAll("#book-author");
+    for (let i = 0; i < bookAuthorDetails.length; i++) {
+      bookAuthorDetails[i].style.color = "white";
+    }
+
+    let tableDetails = document.querySelectorAll("#table-details");
+    for (let i = 0; i < tableDetails.length; i++) {
+      tableDetails[i].style.borderBottomColor = "#D8E2EB";
+    }
+
+    let noteIcon = document.querySelectorAll("#noteIcon");
+    for (let i = 0; i < noteIcon.length; i++) {
+      noteIcon[i].src = "../client/img/note-dark.png";
+    }
+
+    let check = document.querySelectorAll("#check");
+    for (let i = 0; i < check.length; i++) {
+      check[i].src = "../client/img/read-dark-default.png";
+    }
+
+    let trashbin = document.querySelectorAll("#trashbin");
+    for (let i = 0; i < trashbin.length; i++) {
+      trashbin[i].src = "../client/img/remove-dark.png";
+    }
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
@@ -349,6 +375,36 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".notemodal-box").style.background = "#D8E2EB";
     document.getElementById("logo").src = "../client/img/tempLogo.png";
 
+    let bookTitleDetails = document.querySelectorAll("#book-title");
+    for (let i = 0; i < bookTitleDetails.length; i++) {
+      bookTitleDetails[i].style.color = "black";
+    }
+    console.log("bye");
+    let bookAuthorDetails = document.querySelectorAll("#book-author");
+    for (let i = 0; i < bookAuthorDetails.length; i++) {
+      bookAuthorDetails[i].style.color = "#404040";
+    }
+
+    let tableDetails = document.querySelectorAll("#table-details");
+    for (let i = 0; i < tableDetails.length; i++) {
+      tableDetails[i].style.borderBottomColor = "#003744";
+    }
+
+    let noteIcon = document.querySelectorAll("#noteIcon");
+    for (let i = 0; i < noteIcon.length; i++) {
+      noteIcon[i].src = "../client/img/note.png";
+    }
+
+    let check = document.querySelectorAll("#check");
+    for (let i = 0; i < check.length; i++) {
+      check[i].src = "../client/img/read-default.png";
+    }
+
+    let trashbin = document.querySelectorAll("#trashbin");
+    for (let i = 0; i < trashbin.length; i++) {
+      trashbin[i].src = "../client/img/remove.png";
+    }
+
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
       close[i].src = "../client/img/close.png";
@@ -401,12 +457,11 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
 // Read/Unread
 
-
 let read = false;
 function readUnread(number) {
   let readButton = document.querySelector(`.read-icon${number}`);
-  let bookTitler = document.querySelector(`.bookTitleClass${number}`).innerHTML
- 
+  let bookTitler = document.querySelector(`.bookTitleClass${number}`).innerHTML;
+
   read = !read;
   if (read === true) {
     readButton.src = "../client/img/read-green.png";
@@ -414,9 +469,9 @@ function readUnread(number) {
     readButton.src = "../client/img/read-default.png";
   }
 
-
-  api.put(`update-books-read/${bookTitler}`, {
-    isRead: !read
-  })
-  .then((data) => console.log(data))
+  api
+    .put(`update-books-read/${bookTitler}`, {
+      isRead: !read,
+    })
+    .then((data) => console.log(data));
 }
