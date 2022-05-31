@@ -267,6 +267,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".bookmodal-box").style.background = "#52606D";
     document.querySelector(".modal-header").style.color = "white";
     document.querySelector(".notemodal-box").style.background = "#52606D";
+    document.getElementById("logo").src = "../client/img/tempLogo-dark.png";
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
@@ -346,6 +347,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".bookmodal-box").style.background = "#D8E2EB";
     document.querySelector(".bookmodal-input").style.backgroundColor = "white";
     document.querySelector(".notemodal-box").style.background = "#D8E2EB";
+    document.getElementById("logo").src = "../client/img/tempLogo.png";
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
@@ -355,6 +357,11 @@ document.getElementById("light-icon").addEventListener("click", function () {
     let modalHeader = document.querySelectorAll(".modal-header");
     for (let i = 0; i < modalHeader.length; i++) {
       modalHeader[i].style.color = "#404040";
+    }
+
+    let noteModalInput = document.querySelectorAll(".notemodal-input");
+    for (let i = 0; i < noteModalInput.length; i++) {
+      noteModalInput[i].style.background = "white";
     }
 
     let modalBtn = document.querySelectorAll(".modal-button");
