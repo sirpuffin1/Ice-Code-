@@ -6,6 +6,7 @@ function refreshBooks() {
       let bookImage = document.getElementById(`image${index}`);
       let bookTitle = document.getElementById(`title${index}`);
       let bookAuthor = document.getElementById(`author${index}`);
+      let addButton = document.querySelector(`.add-button${index}`);
 
       const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
@@ -17,6 +18,9 @@ function refreshBooks() {
         );
 
       bookImage.src = book.imgUrl;
+      addButton.addEventListener('click', function() {
+        createFromSellers(book.title, book.author)
+      })
       bookTitle.innerHTML = upperCaseFirstLetter(
         lowerCaseAllWordsExceptFirstLetters(book.title)
       );
@@ -24,6 +28,40 @@ function refreshBooks() {
     });
   });
 }
+
+function createFromSellers(string1, string2) {
+  console.log(string1, string2)
+  api
+    .post("book", {
+      title: string1,
+      author: string2,
+      note: "",
+    })
+    .then((data) => console.log(data));
+
+    let tableContainer = document.getElementById("table-details-container");
+    while (tableContainer.firstChild) {
+      tableContainer.removeChild(tableContainer.firstChild);
+    }
+    let showy = setTimeout(showBooks, 100);
+}
+
+function deleteBook(string) {
+  console.log("helloo connected");
+  // let bookTitle = document.getElementById("addTitle").value;
+  // let bookAuthor = document.getElementById("addAuthor").value;
+  console.log('looking for this', string);
+
+  api
+    .delete(`delete-book/${string}`)
+    .then((data) => console.log(data));
+  let tableContainer = document.getElementById("table-details-container");
+  while (tableContainer.firstChild) {
+    tableContainer.removeChild(tableContainer.firstChild);
+  }
+  let showy = setTimeout(showBooks, 100);
+}
+
 function createBook() {
   console.log("helloo connected");
   let bookTitle = document.getElementById("addTitle").value;
@@ -168,6 +206,9 @@ function showBooks() {
       trashIcon.id = "trashbin";
       trashIcon.className = `trash-icon${index}`;
       trashIcon.setAttribute("src", "../client/img/remove.png");
+      trashIcon.addEventListener('click', function() {
+        deleteBook(book.title)
+      })
       tableRight.appendChild(trashIcon);
 
       bookDetails.appendChild(bookTitle);

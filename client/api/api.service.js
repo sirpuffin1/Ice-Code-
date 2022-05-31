@@ -22,5 +22,14 @@ export const apiService = {
         },
         body: JSON.stringify(data),
       }).then((res) => res.json())
+    },
+    delete(url, data) {
+      return fetch(this.baseUrl + url, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-type": "application/json",
+        }
+      }).then((res) => res.json())
     }
   };
