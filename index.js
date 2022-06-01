@@ -1,16 +1,22 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import path from 'path'
 import { BooksModel } from "./books.model.js";
 import { SellersModel } from "./bestsellers.model.js";
 
 import dotenv from "dotenv";
+const __dirname = path.resolve();
 
 dotenv.config();
 const app = express();
 app.use(cors());
 
 app.use(express.json());
+
+const clientPath = path.join(__dirname, "/client");
+app.use(express.static(clientPath));
+
 
 const url= process.env.DATABASE_URL;
 
@@ -123,6 +129,12 @@ app.put("/update-book/:title", function (req, res) {
      }
    );
  });
+
+ app.all("*", function (req, res) {
+  const filePath = path.join(__dirname, '/client/index.html');
+  console.log(filePath);
+  res.sendFile(filePath);
+});
 
 
 //  var port_number = server.listen(process.env.PORT || 3001);
