@@ -16,7 +16,7 @@ function refreshBooks() {
           /\S*/g,
           (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
         );
-        
+
 
       bookImage.src = book.imgUrl;
       addButton.addEventListener('click', function() {
@@ -135,7 +135,7 @@ function showBooks() {
       let closeIconSpan = document.createElement("span");
       closeIconSpan.className = "closeicon-span";
       let closeImage = document.createElement("img");
-      closeImage.src = "../client/img/close.png";
+      closeImage.src = "../img/close.png";
       closeImage.id = "closeNoteModal";
       closeImage.className = "close-icon";
       closeImage.addEventListener("click", function () {
@@ -186,7 +186,7 @@ function showBooks() {
       let noteIcon = document.createElement("img");
       noteIcon.id = "noteIcon";
       noteIcon.className = `note-icon${index}`;
-      noteIcon.setAttribute("src", "../client/img/note.png");
+      noteIcon.setAttribute("src", "../img/note.png");
       noteIcon.addEventListener("click", function () {
         modalInput.value = book.note;
         noteModalfun(index);
@@ -202,11 +202,11 @@ function showBooks() {
       readIcon.id = "check";
       readIcon.className = `read-icon${index}`;
       if (book.isRead == false) {
-        readIcon.setAttribute("src", "../client/img/read-default.png");
+        readIcon.setAttribute("src", "../img/read-default.png");
       } else {
-        readIcon.setAttribute("src", "../client/img/read-green.png");
+        readIcon.setAttribute("src", "../img/read-green.png");
       }
-      // readIcon.setAttribute('src', '../client/img/read-default.png');
+      // readIcon.setAttribute('src', '../img/read-default.png');
       readIcon.addEventListener("click", function () {
         readUnread(index);
       });
@@ -215,7 +215,7 @@ function showBooks() {
       let trashIcon = document.createElement("img");
       trashIcon.id = "trashbin";
       trashIcon.className = `trash-icon${index}`;
-      trashIcon.setAttribute("src", "../client/img/remove.png");
+      trashIcon.setAttribute("src", "../img/remove.png");
       trashIcon.addEventListener('click', function() {
         deleteBook(book.title)
       })
@@ -282,7 +282,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
   light = !light;
 
   if (light === true) {
-    toggle.src = "../client/img/lightToggle-dark.png";
+    toggle.src = "../img/lightToggle-dark.png";
 
     document.getElementById("header").style.background = "#323F4B";
     document.getElementById("shelf-container").style.background = "#323F4B";
@@ -290,7 +290,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.getElementById("site-name").style.color = "white";
     document.getElementById("shelf").id = "shelf-dark";
     document.getElementById("refresh-icon").src =
-      "../client/img/refresh-dark.png";
+      "../img/refresh-dark.png";
     document.getElementById("book-list-header").style.color = "white";
     document.getElementById("header-description").style.color = "#EAEAEA";
     document.getElementById("list-header").style.borderBottomColor = "#D8E2EB";
@@ -298,10 +298,10 @@ document.getElementById("light-icon").addEventListener("click", function () {
     // document.getElementById("book-author").style.color = "white";
     // document.getElementById("table-details").style.borderBottomColor =
     //   "#D8E2EB";
-    // document.getElementById("noteIcon").src = "../client/img/note-dark.png";
+    // document.getElementById("noteIcon").src = "../img/note-dark.png";
     // document.getElementById("check").src =
-    //   "../client/img/read-dark-default.png";
-    // document.getElementById("trashbin").src = "../client/img/remove-dark.png";
+    //   "../img/read-dark-default.png";
+    // document.getElementById("trashbin").src = "../img/remove-dark.png";
     document.getElementById("details").style.color = "white";
     document.getElementById("notes").style.color = "white";
     document.getElementById("read").style.color = "white";
@@ -313,7 +313,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".bookmodal-box").style.background = "#52606D";
     // document.querySelector(".modal-header").style.color = "white";
     // document.querySelector(".notemodal-box").style.background = "#52606D";
-    document.getElementById("logo").src = "../client/img/tempLogo-dark.png";
+    document.getElementById("logo").src = "../img/tempLogo-dark.png";
 
     let notemodalBox = document.querySelectorAll(".notemodal-box");
     for (let i = 0; i < notemodalBox.length; i++) {
@@ -338,22 +338,22 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
     let noteIcon = document.querySelectorAll("#noteIcon");
     for (let i = 0; i < noteIcon.length; i++) {
-      noteIcon[i].src = "../client/img/note-dark.png";
+      noteIcon[i].src = "../img/note-dark.png";
     }
 
     // let check = document.querySelectorAll("#check");
     // for (let i = 0; i < check.length; i++) {
-    //   check[i].src = "../client/img/read-dark-default.png";
+    //   check[i].src = "../img/read-dark-default.png";
     // }
 
     let trashbin = document.querySelectorAll("#trashbin");
     for (let i = 0; i < trashbin.length; i++) {
-      trashbin[i].src = "../client/img/remove-dark.png";
+      trashbin[i].src = "../img/remove-dark.png";
     }
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
-      close[i].src = "../client/img/close-dark.png";
+      close[i].src = "../img/close-dark.png";
     }
 
     let modalHeader = document.querySelectorAll(".modal-header");
@@ -400,14 +400,14 @@ document.getElementById("light-icon").addEventListener("click", function () {
     }
   } else {
     console.log("bye");
-    toggle.src = "../client/img/lightToggle.png";
+    toggle.src = "../img/lightToggle.png";
     document.getElementById("header").style.background = "#f1ece0";
     document.body.style.background = "none";
     document.getElementById("shelf-container").style.background = "#f1ece0";
     document.getElementById("site-name").style.color = "#003744";
     document.querySelector(".book-cover-dark").className = "book-cover";
     document.getElementById("shelf-dark").id = "shelf";
-    document.getElementById("refresh-icon").src = "../client/img/refresh.png";
+    document.getElementById("refresh-icon").src = "../img/refresh.png";
     document.getElementById("book-list-header").style.color = "black";
     document.getElementById("header-description").style.color = "#404040";
     document.getElementById("list-header").style.borderBottomColor = "#003744";
@@ -415,9 +415,9 @@ document.getElementById("light-icon").addEventListener("click", function () {
     // document.getElementById("book-author").style.color = "#404040";
     // document.getElementById("table-details").style.borderBottomColor =
     //   "#003744";
-    // document.getElementById("noteIcon").src = "../client/img/note.png";
-    // document.getElementById("check").src = "../client/img/read-default.png";
-    // document.getElementById("trashbin").src = "../client/img/remove.png";
+    // document.getElementById("noteIcon").src = "../img/note.png";
+    // document.getElementById("check").src = "../img/read-default.png";
+    // document.getElementById("trashbin").src = "../img/remove.png";
     document.getElementById("details").style.color = "#5f5f5f";
     document.getElementById("notes").style.color = "#5f5f5f";
     document.getElementById("read").style.color = "#5f5f5f";
@@ -429,7 +429,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.querySelector(".bookmodal-box").style.background = "#D8E2EB";
     // document.querySelector(".bookmodal-input").style.backgroundColor = "white";
     // document.querySelector(".notemodal-box").style.background = "#D8E2EB";
-    document.getElementById("logo").src = "../client/img/tempLogo.png";
+    document.getElementById("logo").src = "../img/tempLogo.png";
 
     let notemodalBox = document.querySelectorAll(".notemodal-box");
     for (let i = 0; i < notemodalBox.length; i++) {
@@ -453,22 +453,22 @@ document.getElementById("light-icon").addEventListener("click", function () {
 
     let noteIcon = document.querySelectorAll("#noteIcon");
     for (let i = 0; i < noteIcon.length; i++) {
-      noteIcon[i].src = "../client/img/note.png";
+      noteIcon[i].src = "../img/note.png";
     }
 
     // let check = document.querySelectorAll("#check");
     // for (let i = 0; i < check.length; i++) {
-    //   check[i].src = "../client/img/read-default.png";
+    //   check[i].src = "../img/read-default.png";
     // }
 
     let trashbin = document.querySelectorAll("#trashbin");
     for (let i = 0; i < trashbin.length; i++) {
-      trashbin[i].src = "../client/img/remove.png";
+      trashbin[i].src = "../img/remove.png";
     }
 
     let close = document.querySelectorAll(".close-icon");
     for (let i = 0; i < close.length; i++) {
-      close[i].src = "../client/img/close.png";
+      close[i].src = "../img/close.png";
     }
 
     let modalHeader = document.querySelectorAll(".modal-header");
@@ -525,9 +525,9 @@ function readUnread(number) {
 
   read = !read;
   if (read === true) {
-    readButton.src = "../client/img/read-green.png";
+    readButton.src = "../img/read-green.png";
   } else {
-    readButton.src = "../client/img/read-default.png";
+    readButton.src = "../img/read-default.png";
   }
 
   api
