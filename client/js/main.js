@@ -20,7 +20,7 @@ function refreshBooks() {
 
       bookImage.src = book.imgUrl;
       addButton.addEventListener('click', function() {
-        createFromSellers(book.title, book.author)
+        createFromSellers(index)
       })
       bookTitle.innerHTML = upperCaseFirstLetter(
         lowerCaseAllWordsExceptFirstLetters(book.title)
@@ -30,8 +30,12 @@ function refreshBooks() {
   });
 }
 
-function createFromSellers(string1, string2) {
-  console.log(string1, string2)
+function createFromSellers(number) {
+  console.log(number)
+  let bookTitle = document.getElementById(`title${number}`).innerHTML;
+      let bookAuthor = document.getElementById(`author${number}`).innerHTML;
+      
+
   const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
 
@@ -43,8 +47,8 @@ function createFromSellers(string1, string2) {
   api
     .post("book", {
       title: upperCaseFirstLetter(
-        lowerCaseAllWordsExceptFirstLetters(string1)),
-      author: string2,
+        lowerCaseAllWordsExceptFirstLetters(bookTitle)),
+      author: bookAuthor,
       note: "",
     })
     .then((data) => console.log(data));
