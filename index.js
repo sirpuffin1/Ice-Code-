@@ -19,6 +19,18 @@ mongoose.connect(url).then(() => {
 }).catch((err) => {
     console.log("Failed to connect to DB", err);
 });
+
+app.get('/', (req, res, next) => {
+
+  res.status(200).json({
+      status: 'success',
+      data: {
+          name: 'Ice Code Library',
+          version: '0.1.0'
+      }
+  });
+
+});
 //create a route called /bestsellers that gets information
 app.get('/bestsellers', async function(req, res) {
     //create a variable to hold a random set of 3 bestseller books
