@@ -150,7 +150,7 @@ header h1 {
   font-weight: 400;
   font-size: 0.8rem;
   color: white;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 .book-cover-author-dark {
@@ -158,7 +158,7 @@ header h1 {
   font-weight: 400;
   font-size: 0.8rem;
   color: black;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 #add-icon {
