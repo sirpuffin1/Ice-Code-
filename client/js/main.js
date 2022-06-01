@@ -53,7 +53,7 @@ function createFromSellers(string1, string2) {
     while (tableContainer.firstChild) {
       tableContainer.removeChild(tableContainer.firstChild);
     }
-    let showy = setTimeout(showBooks, 100);
+    let showy = setTimeout(showBooks, 500);
 }
 
 function deleteBook(string) {
