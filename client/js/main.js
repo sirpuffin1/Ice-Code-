@@ -8,8 +8,9 @@ function refreshBooks() {
       let bookAuthor = document.getElementById(`author${index}`);
       let addButton = document.querySelector(`.add-button${index}`);
 
-      addButton.removeEventListener('click', createFromSellers
-)
+      var oldAddButton = document.querySelector(`.add-button${index}`)
+      var newAddButton = oldAddButton.cloneNode(true);
+      oldAddButton.parentNode.replaceChild(newAddButton, oldAddButton);
 
       const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
@@ -20,11 +21,10 @@ function refreshBooks() {
           (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
         );
 
-
       bookImage.src = book.imgUrl;
-      addButton.addEventListener('click', function() {
-        createFromSellers(index)
-      })
+      newAddButton.addEventListener("click", function () {
+        createFromSellers(index);
+      });
       bookTitle.innerHTML = upperCaseFirstLetter(
         lowerCaseAllWordsExceptFirstLetters(book.title)
       );
@@ -34,43 +34,42 @@ function refreshBooks() {
 }
 
 function createFromSellers(number) {
-  console.log(number)
+  console.log(number);
   let bookTitle = document.getElementById(`title${number}`).innerHTML;
-      let bookAuthor = document.getElementById(`author${number}`).innerHTML;
-      
-  const upperCaseFirstLetter = (string) =>
-        `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+  let bookAuthor = document.getElementById(`author${number}`).innerHTML;
 
-      const lowerCaseAllWordsExceptFirstLetters = (string) =>
-        string.replaceAll(
-          /\S*/g,
-          (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
-        );
+  const upperCaseFirstLetter = (string) =>
+    `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+
+  const lowerCaseAllWordsExceptFirstLetters = (string) =>
+    string.replaceAll(
+      /\S*/g,
+      (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
+    );
   api
     .post("book", {
       title: upperCaseFirstLetter(
-        lowerCaseAllWordsExceptFirstLetters(bookTitle)),
+        lowerCaseAllWordsExceptFirstLetters(bookTitle)
+      ),
       author: bookAuthor,
       note: "",
     })
     .then((data) => console.log(data));
 
-    let tableContainer = document.getElementById("table-details-container");
-    while (tableContainer.firstChild) {
-      tableContainer.removeChild(tableContainer.firstChild);
-    }
-    let showy = setTimeout(showBooks, 500);
+  let tableContainer = document.getElementById("table-details-container");
+  while (tableContainer.firstChild) {
+    tableContainer.removeChild(tableContainer.firstChild);
+  }
+  let showy = setTimeout(showBooks, 500);
 }
 
 function deleteBook(string) {
   console.log("helloo connected");
   // let bookTitle = document.getElementById("addTitle").value;
   // let bookAuthor = document.getElementById("addAuthor").value;
-  console.log('looking for this', string);
+  console.log("looking for this", string);
 
-  api
-    .delete(`delete-book/${string}`)
-    .then((data) => console.log(data));
+  api.delete(`delete-book/${string}`).then((data) => console.log(data));
   let tableContainer = document.getElementById("table-details-container");
   while (tableContainer.firstChild) {
     tableContainer.removeChild(tableContainer.firstChild);
@@ -222,9 +221,9 @@ function showBooks() {
       trashIcon.id = "trashbin";
       trashIcon.className = `trash-icon${index}`;
       trashIcon.setAttribute("src", "../img/remove.png");
-      trashIcon.addEventListener('click', function() {
-        deleteBook(book.title)
-      })
+      trashIcon.addEventListener("click", function () {
+        deleteBook(book.title);
+      });
       tableRight.appendChild(trashIcon);
 
       bookDetails.appendChild(bookTitle);
@@ -295,8 +294,7 @@ document.getElementById("light-icon").addEventListener("click", function () {
     document.body.style.background = "#1F2933";
     document.getElementById("site-name").style.color = "white";
     document.getElementById("shelf").id = "shelf-dark";
-    document.getElementById("refresh-icon").src =
-      "../img/refresh-dark.png";
+    document.getElementById("refresh-icon").src = "../img/refresh-dark.png";
     document.getElementById("book-list-header").style.color = "white";
     document.getElementById("header-description").style.color = "#EAEAEA";
     document.getElementById("list-header").style.borderBottomColor = "#D8E2EB";
