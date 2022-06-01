@@ -1,5 +1,5 @@
 export const apiService = {
-    baseUrl: "http://localhost:3001/",
+    baseUrl: "/",
     get(url) {
       return fetch(this.baseUrl + url).then((res) => res.json());
     },
