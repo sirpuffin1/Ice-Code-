@@ -112,7 +112,10 @@ app.put("/update-book/:title", function (req, res) {
    );
  });
 
-app.listen(3001, ()=>{
-console.log("server is running on port 3001");
 
-})
+ var port_number = server.listen(process.env.PORT || 3001);
+app.listen(port_number);
+// app.listen(3001, ()=>{
+// console.log("server is running on port 3001");
+
+// })
