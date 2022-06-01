@@ -8,9 +8,8 @@ function refreshBooks() {
       let bookAuthor = document.getElementById(`author${index}`);
       let addButton = document.querySelector(`.add-button${index}`);
 
-      addButton.removeEventListener('click', function() {
-        createFromSellers(index)
-      })
+      addButton.removeEventListener('click', createFromSellers
+)
 
       const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
