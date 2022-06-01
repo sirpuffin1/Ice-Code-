@@ -31,9 +31,18 @@ function refreshBooks() {
 
 function createFromSellers(string1, string2) {
   console.log(string1, string2)
+  const upperCaseFirstLetter = (string) =>
+        `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+
+      const lowerCaseAllWordsExceptFirstLetters = (string) =>
+        string.replaceAll(
+          /\S*/g,
+          (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
+        );
   api
     .post("book", {
-      title: string1,
+      title: upperCaseFirstLetter(
+        lowerCaseAllWordsExceptFirstLetters(string1)),
       author: string2,
       note: "",
     })
@@ -331,10 +340,10 @@ document.getElementById("light-icon").addEventListener("click", function () {
       noteIcon[i].src = "../client/img/note-dark.png";
     }
 
-    let check = document.querySelectorAll("#check");
-    for (let i = 0; i < check.length; i++) {
-      check[i].src = "../client/img/read-dark-default.png";
-    }
+    // let check = document.querySelectorAll("#check");
+    // for (let i = 0; i < check.length; i++) {
+    //   check[i].src = "../client/img/read-dark-default.png";
+    // }
 
     let trashbin = document.querySelectorAll("#trashbin");
     for (let i = 0; i < trashbin.length; i++) {
@@ -446,10 +455,10 @@ document.getElementById("light-icon").addEventListener("click", function () {
       noteIcon[i].src = "../client/img/note.png";
     }
 
-    let check = document.querySelectorAll("#check");
-    for (let i = 0; i < check.length; i++) {
-      check[i].src = "../client/img/read-default.png";
-    }
+    // let check = document.querySelectorAll("#check");
+    // for (let i = 0; i < check.length; i++) {
+    //   check[i].src = "../client/img/read-default.png";
+    // }
 
     let trashbin = document.querySelectorAll("#trashbin");
     for (let i = 0; i < trashbin.length; i++) {
