@@ -8,6 +8,10 @@ function refreshBooks() {
       let bookAuthor = document.getElementById(`author${index}`);
       let addButton = document.querySelector(`.add-button${index}`);
 
+      addButton.removeEventListener('click', function() {
+        createFromSellers(index)
+      })
+
       const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
 
@@ -35,7 +39,6 @@ function createFromSellers(number) {
   let bookTitle = document.getElementById(`title${number}`).innerHTML;
       let bookAuthor = document.getElementById(`author${number}`).innerHTML;
       
-
   const upperCaseFirstLetter = (string) =>
         `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
 
