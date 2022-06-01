@@ -16,6 +16,7 @@ function refreshBooks() {
           /\S*/g,
           (word) => `${word.slice(0, 1)}${word.slice(1).toLowerCase()}`
         );
+        
 
       bookImage.src = book.imgUrl;
       addButton.addEventListener('click', function() {
