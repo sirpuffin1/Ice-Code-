@@ -94,6 +94,9 @@ function createBook() {
   while (tableContainer.firstChild) {
     tableContainer.removeChild(tableContainer.firstChild);
   }
+  //closes modal on submit
+  newBookModal.style.display = "none";
+
   let showy = setTimeout(showBooks, 100);
 }
 
@@ -168,6 +171,7 @@ function showBooks() {
       modalButton.id = `modalButton${index}`;
       modalButton.addEventListener("click", function () {
         updateNotes(index, book.title);
+        noteModal.style.display = "none";
       });
       noteButtonSpan.appendChild(modalButton);
       noteModalBox.appendChild(noteButtonSpan);
