@@ -7,23 +7,28 @@
     <title>Ice Code</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/buttonchange.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  
   </head>
   <body>
+  
 
-    
     <!-- Hero starts -->
     <header id="header">
     <div id="toggle">
-        <img id="light-icon" src="../img/lightToggle.png" alt="" />
+      <img src="img/lightToggle.png" alt="" />
       </div>
-        <img id="logo" src="../img/tempLogo.png" alt="" />
+        <img src="img/tempLogo.png" alt="" />
         <h1 id="site-name">ICE CODE LIT.</h1> 
     </header>
     <section id="shelf-container">
         <div id="book-container">
         <div id="book1" class="book-cover book1">
-        <img id="image0" src="" alt="">
+          <button id="btnclick1">
+            <img id="imgcheck1" src="img/read-dark-default.png" style="width:20px; height:20px;" /> 
+            <img src="img/remove.png" style="width:20px; height:20px;" /> 
+       </button>
         <div class="book-overlay">
             <div class="overlay-info">
             <h4 id="title0" class="book-cover-title">Title</h4>
@@ -33,7 +38,10 @@
         </div>
         </div>
         <div id="book2" class="book-cover book2">
-          <img id="image1" src="" alt="">
+          <button id="btnclick2">
+            <img id="imgcheck2" src="img/read-dark-default.png" style="width:20px; height:20px;" /> 
+            <img src="img/remove.png" style="width:20px; height:20px;" /> 
+       </button>
           <div class="book-overlay">
               <div class="overlay-info">
               <h4 id="title1" class="book-cover-title">Title</h4>
@@ -43,7 +51,10 @@
           </div>
           </div>
           <div id="book3" class="book-cover book3">
-            <img id="image2" src="" alt="">
+            <button id="btnclick3">
+              <img id="imgcheck3" src="img/read-dark-default.png" style="width:20px; height:20px;" /> 
+              <img src="img/remove.png" style="width:20px; height:20px;" /> 
+         </button>
             <div class="book-overlay">
                 <div class="overlay-info">
                 <h4 id="title2" class="book-cover-title">Title</h4>
